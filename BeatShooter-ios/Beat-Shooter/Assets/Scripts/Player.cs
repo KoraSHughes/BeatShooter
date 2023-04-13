@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     private float defaultAng = -1;
 
     Camera cam;
+    //control types
+    bool touchControls = true;
+    bool keyboardControls = true;
 
     void Start()
     {
@@ -44,25 +47,27 @@ public class Player : MonoBehaviour
             timeToShoot = 0;
         }
         
-        for (int i=0; i< Input.touchCount; ++i){
+        for (int i=0; i< Input.touchCount; ++i){  // track all touches
             Touch touch = Input.GetTouch(i);
             if (touch.phase == TouchPhase.Began) {
                 Vector2 pos = cam.ScreenToWorldPoint(touch.position);
                 Debug.Log("Found Touch: " + pos.ToString() + " with #Fingers: " + Input.touchCount.ToString());
             }
         }
+        Vector2 touchLoc = (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ?
+                             cam.ScreenToWorldPoint(Input.GetTouch(0).position) : Vector2.zero;
 
         myAngle = defaultAng;
-        if (leftMove()){  // Input.GetButtonDown("left")
+        if (leftMove(touchLoc)){
             myAngle = 90f;
         }
-        else if (rightMove()){
+        else if (rightMove(touchLoc)){
             myAngle = -90f;
         }
-        else if (upMove()){
+        else if (upMove(touchLoc)){
             myAngle = 0f;
         }
-        else if (downMove()){
+        else if (downMove(touchLoc)){
             myAngle = 180f;
         }
         if (myAngle != defaultAng){
@@ -107,20 +112,24 @@ public class Player : MonoBehaviour
     }
 
     // movement functions
-    bool upMove(){
+    bool upMove(Vector2 touchPos){
         float vert = Input.GetAxis("Vertical");
-        return vert > 0;
+        return (touchControls ? (touchPos.y > 0 && Mathf.Abs(touchPos.y) > Mathf.Abs(touchPos.x)) : true) 
+               &&  (keyboardControls ? vert > 0 : true);
     }
-    bool downMove(){
+    bool downMove(Vector2 touchPos){
         float vert = Input.GetAxis("Vertical");
-        return vert < 0;
+        return (touchControls ? (touchPos.y < 0 && Mathf.Abs(touchPos.y) > Mathf.Abs(touchPos.x)) : true) 
+               &&  (keyboardControls ? vert < 0 : true);
     }
-    bool leftMove(){
+    bool leftMove(Vector2 touchPos){
         float horz = Input.GetAxis("Horizontal");
-        return horz < 0;
+        return (touchControls ? (touchPos.x < 0 && Mathf.Abs(touchPos.y) < Mathf.Abs(touchPos.x)) : true) 
+               &&  (keyboardControls ? horz < 0 : true);
     }
-    bool rightMove(){
+    bool rightMove(Vector2 touchPos){
         float horz = Input.GetAxis("Horizontal");
-        return horz > 0;
+        return (touchControls ? (touchPos.x > 0 && Mathf.Abs(touchPos.y) < Mathf.Abs(touchPos.x)) : true) 
+               &&  (keyboardControls ? horz > 0 : true);
     }
 }
