@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     Color color1;
     public GameObject bulletPrefab2;
     Color color2;
+    
+    private float defaultAng = -1;
 
     void Start()
     {
@@ -42,21 +44,20 @@ public class Player : MonoBehaviour
         // _rigidbody2D.velocity = new Vector2(xSpeed, ySpeed);
 
         // transform.position = new Vector2(0f, 0f);
-        float vert = Input.GetAxis("Vertical");
-        float horz = Input.GetAxis("Horizontal");
-        if (horz < 0){  // Input.GetButtonDown("left")
+        myAngle = defaultAng;
+        if (leftMove()){  // Input.GetButtonDown("left")
             myAngle = 90f;
         }
-        else if (horz > 0){
+        else if (rightMove()){
             myAngle = -90f;
         }
-        else if (vert > 0){
+        else if (upMove()){
             myAngle = 0f;
         }
-        else if (vert < 0){
+        else if (downMove()){
             myAngle = 180f;
         }
-        if (vert != 0 || horz != 0){
+        if (myAngle != defaultAng){
             if (timeToShoot == 0){
                 // rotate
                 transform.rotation = Quaternion.Euler(0f,0f,myAngle);
@@ -95,5 +96,23 @@ public class Player : MonoBehaviour
                 sprite.color = color1;
             }
         }
+    }
+
+    // movement functions
+    bool upMove(){
+        float vert = Input.GetAxis("Vertical");
+        return vert > 0;
+    }
+    bool downMove(){
+        float vert = Input.GetAxis("Vertical");
+        return vert < 0;
+    }
+    bool leftMove(){
+        float horz = Input.GetAxis("Horizontal");
+        return horz < 0;
+    }
+    bool rightMove(){
+        float horz = Input.GetAxis("Horizontal");
+        return horz > 0;
     }
 }
