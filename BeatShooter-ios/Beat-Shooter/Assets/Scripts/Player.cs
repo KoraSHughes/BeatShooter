@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Found Touch: " + pos.ToString() + " with #Fingers: " + Input.touchCount.ToString());
             }
         }
-        Vector2 touchLoc = (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ?
+        Vector2 touchLoc = (touchControls && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ?
                              cam.ScreenToWorldPoint(Input.GetTouch(0).position) : Vector2.zero;
 
         myAngle = defaultAng;
