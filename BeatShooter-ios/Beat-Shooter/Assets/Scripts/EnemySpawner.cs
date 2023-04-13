@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         level = generateLevel();
-        Debug.Log("LEVEL: " + level);
+        // Debug.Log("LEVEL: " + level);
     }
     // Update is called once per frame
     void Update()

@@ -22,12 +22,16 @@ public class Player : MonoBehaviour
     
     private float defaultAng = -1;
 
+    Camera cam;
+
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         color1 = bulletPrefab1.GetComponent<SpriteRenderer>().color;
         color2 = bulletPrefab2.GetComponent<SpriteRenderer>().color;
+
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -39,11 +43,15 @@ public class Player : MonoBehaviour
         else{
             timeToShoot = 0;
         }
-        // float xSpeed = Input.GetAxis("Horizontal") * pSpeed;
-        // float ySpeed = Input.GetAxis("Vertical") * pSpeed;
-        // _rigidbody2D.velocity = new Vector2(xSpeed, ySpeed);
+        
+        for (int i=0; i< Input.touchCount; ++i){
+            Touch touch = Input.GetTouch(i);
+            if (touch.phase == TouchPhase.Began) {
+                Vector2 pos = cam.ScreenToWorldPoint(touch.position);
+                Debug.Log("Found Touch: " + pos.ToString() + " with #Fingers: " + Input.touchCount.ToString());
+            }
+        }
 
-        // transform.position = new Vector2(0f, 0f);
         myAngle = defaultAng;
         if (leftMove()){  // Input.GetButtonDown("left")
             myAngle = 90f;
