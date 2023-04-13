@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
                 spawnRight(randomBoolean());
             }
             else{
-                Debug.Log("Error on Level String: " + level);
+                Debug.Log("Error on Level String: " + level[i]);
             }
             mytime = 0;
 
