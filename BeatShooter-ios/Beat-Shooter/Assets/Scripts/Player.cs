@@ -47,15 +47,27 @@ public class Player : MonoBehaviour
             timeToShoot = 0;
         }
         
-        for (int i=0; i< Input.touchCount; ++i){  // track all touches
+
+        Vector2[] touches = new Vector2[Input.touchCount];
+        for (int i=0; i < Input.touchCount; ++i){  // track all touches
             Touch touch = Input.GetTouch(i);
-            if (touch.phase == TouchPhase.Began) {
-                Vector2 pos = cam.ScreenToWorldPoint(touch.position);
-                Debug.Log("Found Touch: " + pos.ToString() + " with #Fingers: " + Input.touchCount.ToString());
-            }
+            Vector2 pos = cam.ScreenToWorldPoint(touch.position);
+            touches[i] = pos;
+            // if (touch.phase == TouchPhase.Began) {
+            //     Vector2 pos = cam.ScreenToWorldPoint(touch.position);
+            //     touches.append(pos)
+            // }
         }
-        Vector2 touchLoc = (touchControls && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ?
-                             cam.ScreenToWorldPoint(Input.GetTouch(0).position) : Vector2.zero;
+        Debug.Log("Found " + touches.Length + " touches:" + touches.ToString());
+        // for (int i=0; i< Input.touchCount; ++i){  // track all touches
+        //     Touch touch = Input.GetTouch(i);
+        //     if (touch.phase == TouchPhase.Began) {
+        //         Vector2 pos = cam.ScreenToWorldPoint(touch.position);
+        //         Debug.Log("Found Touch: " + pos.ToString() + " with #Fingers: " + Input.touchCount.ToString());
+        //     }
+        // }
+        Vector2 touchLoc = (touchControls && Input.touchCount > 0) ?
+                             touches[0] : Vector2.zero;
 
         myAngle = defaultAng;
         if (leftMove(touchLoc)){
