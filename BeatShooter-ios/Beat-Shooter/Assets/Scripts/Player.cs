@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     SpriteRenderer sprite;
     public Transform spawnPoint;
 
-	// int pSpeed = 5;
     // Start is called before the first frame update
     bool gunType = true;
     float myAngle = 0f;
@@ -21,11 +20,13 @@ public class Player : MonoBehaviour
     Color color2;
     
     private float defaultAng = -1;
-
     Camera cam;
-    //control types
-    bool touchControls = true;
-    bool keyboardControls = true;
+
+    public GameObject[] test_objs;
+
+    private float width;
+    private float height;
+    float touch_threshold = 0.1f;
 
     void Start()
     {
@@ -35,12 +36,15 @@ public class Player : MonoBehaviour
         color2 = bulletPrefab2.GetComponent<SpriteRenderer>().color;
 
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        width = (float)Screen.width / 2.0f;
+        height = (float)Screen.height / 2.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeToShoot > 0){
+        if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;
         }
         else{
@@ -53,12 +57,11 @@ public class Player : MonoBehaviour
             Touch touch = Input.GetTouch(i);
             Vector2 pos = cam.ScreenToWorldPoint(touch.position);
             touches[i] = pos;
-            // if (touch.phase == TouchPhase.Began) {
-            //     Vector2 pos = cam.ScreenToWorldPoint(touch.position);
-            //     touches.append(pos)
-            // }
         }
-        Debug.Log("Found " + touches.Length + " touches:" + touches.ToString());
+        int touch_reigon = (touches.Length == 0) ? -1 : get_reigon(touches[0]);
+        Debug.Log("Found " + touches.Length + " touches:" + touches +  //show_vecs(touches) 
+                  " with reigon " + touch_reigon.ToString());
+
         // for (int i=0; i< Input.touchCount; ++i){  // track all touches
         //     Touch touch = Input.GetTouch(i);
         //     if (touch.phase == TouchPhase.Began) {
@@ -66,22 +69,31 @@ public class Player : MonoBehaviour
         //         Debug.Log("Found Touch: " + pos.ToString() + " with #Fingers: " + Input.touchCount.ToString());
         //     }
         // }
-        Vector2 touchLoc = (touchControls && Input.touchCount > 0) ?
-                             touches[0] : Vector2.zero;
 
-        myAngle = defaultAng;
-        if (leftMove(touchLoc)){
-            myAngle = 90f;
+        // show box on reigon touch
+        if (touch_reigon != -1 && touch_reigon != 0){
+            GameObject newBox = Instantiate(test_objs[touch_reigon-1], touches[0], Quaternion.identity);
         }
-        else if (rightMove(touchLoc)){
-            myAngle = -90f;
+        
+        switch (touch_reigon)
+        {
+            case 1:
+                myAngle = 90f;
+                break;
+            case 2:
+                myAngle = -90f;
+                break;
+            case 3:
+                myAngle = 0f;
+                break;
+            case 4:
+                myAngle = 180f;
+                break;
+            default:
+                myAngle = defaultAng;
+                break;
         }
-        else if (upMove(touchLoc)){
-            myAngle = 0f;
-        }
-        else if (downMove(touchLoc)){
-            myAngle = 180f;
-        }
+
         if (myAngle != defaultAng){
             if (timeToShoot == 0){
                 // rotate
@@ -123,25 +135,29 @@ public class Player : MonoBehaviour
         }
     }
 
-    // movement functions
-    bool upMove(Vector2 touchPos){
-        float vert = Input.GetAxis("Vertical");
-        return (touchControls ? (touchPos.y > 0 && Mathf.Abs(touchPos.y) > Mathf.Abs(touchPos.x)) : true) 
-               &&  (keyboardControls ? vert > 0 : true);
+    int get_reigon(Vector2 touchPos){
+        // returns screen reigon {left: 1, right: 2, down: 3, up: 4} & 0 is not far enough
+        if (Mathf.Abs(touchPos.x) < width*touch_threshold ||
+            Mathf.Abs(touchPos.y) < height*touch_threshold) {
+                return 0;
+        }
+        else{
+            float diff = Mathf.Abs(touchPos.x) - Mathf.Abs(touchPos.y);
+            if (diff > 0){  // x movement
+                return (touchPos.x > 0) ? 2 : 1;
+            }
+            else{
+                return (touchPos.y > 0) ? 4 : 3;
+            }
+        }
     }
-    bool downMove(Vector2 touchPos){
-        float vert = Input.GetAxis("Vertical");
-        return (touchControls ? (touchPos.y < 0 && Mathf.Abs(touchPos.y) > Mathf.Abs(touchPos.x)) : true) 
-               &&  (keyboardControls ? vert < 0 : true);
-    }
-    bool leftMove(Vector2 touchPos){
-        float horz = Input.GetAxis("Horizontal");
-        return (touchControls ? (touchPos.x < 0 && Mathf.Abs(touchPos.y) < Mathf.Abs(touchPos.x)) : true) 
-               &&  (keyboardControls ? horz < 0 : true);
-    }
-    bool rightMove(Vector2 touchPos){
-        float horz = Input.GetAxis("Horizontal");
-        return (touchControls ? (touchPos.x > 0 && Mathf.Abs(touchPos.y) < Mathf.Abs(touchPos.x)) : true) 
-               &&  (keyboardControls ? horz > 0 : true);
+
+    string show_vecs(Vector2[] vecs){
+        string ret = "[ ";
+        for (int i=0; i < vecs.Length; ++i){
+            ret += vecs[i].ToString() + " ";
+        }
+        ret += "]";
+        return ret;
     }
 }

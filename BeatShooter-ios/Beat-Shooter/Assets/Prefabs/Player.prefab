@@ -167,6 +167,11 @@ MonoBehaviour:
   spawnPoint: {fileID: 887420968191358241}
   bulletPrefab1: {fileID: 1114680609795115919, guid: e5a4924c5f5c247e6b9ee878c85052a2, type: 3}
   bulletPrefab2: {fileID: 1114680609795115919, guid: 5aa9574d181784213991942c66ba30bf, type: 3}
+  test_objs:
+  - {fileID: 1819533148588635983, guid: 1898e0dce8c6c4215aa7422b5c483624, type: 3}
+  - {fileID: 8535070726830055957, guid: 14876a351a7c34b529fbe80099af8c56, type: 3}
+  - {fileID: 6346942818547481058, guid: c2a446866455049f99ad496ce2e4f9a6, type: 3}
+  - {fileID: 212428694093133277, guid: 5e2096f1eff96417180686c2de7e7bc2, type: 3}
 --- !u!212 &887420968945485308
 SpriteRenderer:
   m_ObjectHideFlags: 0
