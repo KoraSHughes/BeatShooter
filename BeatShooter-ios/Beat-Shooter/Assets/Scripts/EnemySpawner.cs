@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     float mytime = 0;
 
     private string level = "w.......a.......s.......d..............";
-    private float bps = 8;
+    private float bps = 4;
 
     int i = 0;
     bool etype = true;
