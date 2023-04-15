@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     private float width;
     private float height;
-    float touch_threshold = 0.1f;
+    float touch_threshold = 0.0f;
 
     void Start()
     {
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             touches[i] = pos;
         }
         int touch_reigon = (touches.Length == 0) ? -1 : get_reigon(touches[0]);
-        Debug.Log("Found " + touches.Length + " touches:" + touches +  //show_vecs(touches) 
+        Debug.Log("*Found " + touches.Length + " touches: " + show_vecs(touches) +
                   " with reigon " + touch_reigon.ToString());
 
         // for (int i=0; i< Input.touchCount; ++i){  // track all touches
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
                 else{
                     newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bulletSpeed, 0));
                 }
-                timeToShoot = 0.4f;
+                timeToShoot = 0.1f;
             }
         }
         
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
     }
 
     int get_reigon(Vector2 touchPos){
-        // returns screen reigon {left: 1, right: 2, down: 3, up: 4} & 0 is not far enough
+        // returns screen reigon {left: 1, right: 2, up: 3, down: 4} & 0 is not far enough
         if (Mathf.Abs(touchPos.x) < width*touch_threshold ||
             Mathf.Abs(touchPos.y) < height*touch_threshold) {
                 return 0;
@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
                 return (touchPos.x > 0) ? 2 : 1;
             }
             else{
-                return (touchPos.y > 0) ? 4 : 3;
+                return (touchPos.y > 0) ? 3 : 4;
             }
         }
     }
