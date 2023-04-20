@@ -12,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/OldGame.unity
     guid: 627e0af20e27149ef9b39ec6b12a311d
   - enabled: 1
+    path: Assets/Scenes/1) MainMenu.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/2) LevelSelect.unity
+    guid: 59a83975b38a2954493e77b1a2aa7369
+  - enabled: 1
+    path: Assets/Scenes/3) Song1.unity
+    guid: ec690c75a33b8b04ea84ce1b1590a3ab
+  - enabled: 1
+    path: Assets/Scenes/4) Song2.unity
+    guid: 51a94179767606c4d92aea83693111d3
+  - enabled: 1
+    path: Assets/Scenes/5) Song3.unity
+    guid: 45570281845883b4a9e9ba40af3b1bc6
+  - enabled: 1
     path: Assets/Scenes/TouchTest.unity
     guid: 03fe3366ca2c7421b9a0714a27d412c0
   m_configObjects:
