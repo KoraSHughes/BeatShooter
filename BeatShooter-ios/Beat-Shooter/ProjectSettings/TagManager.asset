@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - bullet1
+  - bullet2
+  - enemy1
+  - enemy2
+  - Pause Button UI
+  - Settings Button UI
+  - Pause Menu UI
+  - Game Over Menu UI
+  - Settings Menu UI
+  - Background
+  - Start Button UI
   layers:
   - Default
   - TransparentFX
