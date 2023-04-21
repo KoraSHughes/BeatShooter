@@ -170,5 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2be8fff06e0d34eb0a642853c2b9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  track1: 7700000011010000
-  track2: 6100000014010000
+  left: 6100000014010000
+  up: 7700000011010000
+  down: 7300000012010000
+  right: 6400000013010000

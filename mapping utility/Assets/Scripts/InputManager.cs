@@ -7,8 +7,8 @@ using TMPro;
 public class InputManager : MonoBehaviour
 {
     public KeyCode[] left, up, down, right;
-    char direction; //l: 0, u: 1, d: 2, r: 3
-    enum NoteType{SINGLE, HELD, DRUMROLL, HAZARD}; //doing a bit 
+    string direction; //l: 0, u: 1, d: 2, r: 3
+    enum NoteType{COLORA, COLORB}; //doing a bit 
     //public List<Vector2> notes; //y is beat, x is position
     List<string> mapLst;
     int lastPos;
@@ -16,24 +16,24 @@ public class InputManager : MonoBehaviour
     float held0start, held1start, held2start, held3start;
     float holdCheck = 0.5f;
 
-    private void pressDownHelper() {
-        if (Input.GetKey(KeyCode.Space)) {
+    private void pressDownHelper(int color) {
+        //if (Input.GetKey(KeyCode.Space)) {
             print("Pressed!\n");
-            mapLst.Add(direction + NoteType.HAZARD + " " + Conductor.songPosInBeats + "\n");
-        }
-        else {
+            mapLst.Add(direction + " " + (color == 0 ? NoteType.COLORA : NoteType.COLORB) + " " + Conductor.songPosInBeats + "\n");
+        //}
+/*         else {
             if (held1start == -1) {
                 held1start = Conductor.songPosInBeats;
             }
-        }
+        } */
     }
 
     private void holdHelper(float heldstart) {
         if (Mathf.Abs(Conductor.songPosInBeats - heldstart) > holdCheck) {
-            mapLst.Add(direction + NoteType.HELD + " " + heldstart + " " + Conductor.songPosInBeats + "\n");
+            mapLst.Add(direction + " " + heldstart + " " + Conductor.songPosInBeats + "\n"); //+ NoteType.HELD
         }
         else {
-            mapLst.Add(direction+ NoteType.SINGLE + " " + heldstart + "\n");
+            mapLst.Add(direction + " " + heldstart + "\n"); //+ NoteType.SINGLE
         }
     }
 
@@ -55,28 +55,44 @@ public class InputManager : MonoBehaviour
         }
 
         //left press down check
-        if (Input.GetKeyDown(left[0]) || Input.GetKeyDown(left[1])) {
-            direction = 'l';
-            pressDownHelper();
+        if (Input.GetKeyDown(left[0])) {
+            direction = "l";
+            pressDownHelper(0);
+        }
+        else if (Input.GetKeyDown(left[1])) {
+            direction = "l";
+            pressDownHelper(1);
         }
         //up press down check
-        else if (Input.GetKeyDown(up[0]) || Input.GetKeyDown(up[1])) {
-            direction = 'u';
-            pressDownHelper();
+        else if (Input.GetKeyDown(up[0])) {
+            direction = "u";
+            pressDownHelper(0);
+        }
+        else if (Input.GetKeyDown(up[1])) {
+            direction = "u";
+            pressDownHelper(1);
         }
 
-        else if (Input.GetKeyDown(down[0]) || Input.GetKeyDown(down[1])) {
-            direction = 'd';
-            pressDownHelper();
+        else if (Input.GetKeyDown(down[0])) {
+            direction = "d";
+            pressDownHelper(0);
+        }
+        else if (Input.GetKeyDown(down[1])) {
+            direction = "d";
+            pressDownHelper(1);
         }
 
-        else if (Input.GetKeyDown(right[0]) || Input.GetKeyDown(right[1])) {
-            direction = 'r';
-            pressDownHelper();
+        else if (Input.GetKeyDown(right[0])) {
+            direction = "r";
+            pressDownHelper(0);
+        }
+        else if (Input.GetKeyDown(right[1])) {
+            direction = "r";
+            pressDownHelper(1);
         }
         
         
-        //left release check
+/*         //left release check
         else if (Input.GetKeyUp(left[0]) || Input.GetKeyUp(left[1])) {
             if (held0start != -1) {
                 holdHelper(held0start);
@@ -101,7 +117,7 @@ public class InputManager : MonoBehaviour
                 holdHelper(held3start);
                 held3start = -1;
             }
-        }
+        } */
 
         /*else if (Input.GetKeyUp(left[0]) || Input.GetKeyUp(left[1])) {
             if (Mathf.Abs(Conductor.songPosInBeats - held1start) > holdCheck)

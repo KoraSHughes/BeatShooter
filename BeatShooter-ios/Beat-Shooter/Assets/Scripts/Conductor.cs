@@ -12,7 +12,7 @@
 //     public Recorder rStats;
 //     //public StageController sController;
 
-//     public float songBpm; //Bach: 110
+//     public float songBpm; //DynamicFight: 90; Bach: 110; 
 //     public float secPerBeat;
 //     public float songPos;
 //     public float songPosInBeats;
