@@ -73,6 +73,8 @@ public class EnemySpawner : MonoBehaviour
             enemy = enemy1;
         }
         GameObject newEnemy = Instantiate(enemy, left.transform.position, Quaternion.identity);
+        // rotate to face right
+        newEnemy.transform.localRotation = Quaternion.Euler(0, 0, -90);
         newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(eSpeed, 0));
     }
     private void spawnRight(bool etype){
@@ -81,6 +83,8 @@ public class EnemySpawner : MonoBehaviour
             enemy = enemy1;
         }
         GameObject newEnemy = Instantiate(enemy, right.transform.position, Quaternion.identity);
+        // rotate to face left
+        newEnemy.transform.localRotation = Quaternion.Euler(0, 0, 90);
         newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(-eSpeed, 0));
     }
     private void spawnTop(bool etype){
@@ -89,6 +93,8 @@ public class EnemySpawner : MonoBehaviour
             enemy = enemy1;
         }
         GameObject newEnemy = Instantiate(enemy, top.transform.position, Quaternion.identity);
+        // rotate to face down
+        newEnemy.transform.localRotation = Quaternion.Euler(0, 0, 180);
         newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -eSpeed/2));
     }
     private void spawnBottom(bool etype){

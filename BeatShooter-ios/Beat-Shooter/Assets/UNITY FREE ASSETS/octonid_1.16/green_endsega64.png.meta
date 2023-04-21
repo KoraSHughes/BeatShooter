@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,2779 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: green_endsega64_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1229
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac20c872256c16347adca12d33a6cdcb
+      internalID: 1441015480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1229
+        width: 52
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ae0ed18b98e8d4fae80dae48bcb8e9
+      internalID: -388433311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1229
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7725c370735cd2d40b18191604224026
+      internalID: -1289334196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1229
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4f6863b2493bd40b8d09c255fd4107
+      internalID: -1108388943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1229
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432b357975f70f243ba28b5aa5cd7629
+      internalID: 1432464974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1229
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c5107507beebe448fccb0ed26b10f0
+      internalID: -1838320718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_6
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1229
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dafe6867a4b37e4591f57cf23e96b11
+      internalID: 406413116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1229
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: decd958e7f700fe4595c8c3146d2cf9e
+      internalID: -804849741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1162
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924e4192512656942b2140f0e06ffcc5
+      internalID: -1561912188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1163
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117496e17b8c3344c8acd6c8409d9003
+      internalID: 375080594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_10
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1165
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beed83dc22919144fb459630508b150f
+      internalID: -1832833573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1167
+        width: 54
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714f5db5b863e29408b242ae49e20d9d
+      internalID: 682187828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_12
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1171
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1713a2b44bf6b4ebbb511b7f2018d2
+      internalID: -1672928104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_13
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1169
+        width: 52
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e675c6057fa472c4f83b602e6c763fc1
+      internalID: 782768060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_14
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1165
+        width: 52
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa7af2ba33f3ba4aae5f8e38dcbc13c
+      internalID: 1016183351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_15
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1163
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef1228ad4f19d544af1b8a4ab26a419
+      internalID: 396507540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1099
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99850cfef07a4c043aaae3020a3a665c
+      internalID: 2018240461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1099
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfae9cf4518928e42a07e6ae01e0164b
+      internalID: 251617899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_18
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1098
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10677b7dad1460442aba99babebe692c
+      internalID: 1445341150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_19
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1033
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bf52add2fa8b344ac498955e5980af
+      internalID: 575000703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_20
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1031
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc429d7992b9a9048bf00cc4adbce89d
+      internalID: -645423164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_21
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1031
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad70491c2c20c3478088a3522c3ce5d
+      internalID: 175528414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1031
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9019382ea24274daa20186a67d6e49
+      internalID: -1247897887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_23
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1032
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2740237173799b41869d53f3a90ece1
+      internalID: 1959158566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_24
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1034
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f148ed59c9d61478ee074c4f97a918
+      internalID: 253305693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_25
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1035
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c574011ed5311fe43920946fc9c28640
+      internalID: 302269642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_26
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 971
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c314b537f484b444e9b19ee79ac1d98a
+      internalID: 1813704972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_27
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 970
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95071f7df11ab4d4d87b75c908326a64
+      internalID: -1203705261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_28
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 968
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28edf9f844cc143459c70f7c0c6265de
+      internalID: 675383543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_29
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 967
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2377d0e5c88aec94699ac9bae91c5411
+      internalID: -1863065754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_30
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 967
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70c2c1f03302e444942857c4759c08f
+      internalID: -1905904839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_31
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 967
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a3e9489b9f12445b9b53feebccbdee
+      internalID: 943563132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_32
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 969
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631c8825369f5f144abf94fc9fedc922
+      internalID: -1154182656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_33
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 909
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd08e1210664bd44fb914a72853741e0
+      internalID: -123924988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_34
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 909
+        width: 52
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8905939bb131f249b1b96b4f7f596b7
+      internalID: -1163331886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_35
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 909
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae427384ac905d540a318732880f03ed
+      internalID: -1967053312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_36
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 909
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f570f4d46098ee74ca0a78bbfeb547d9
+      internalID: 1426594870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_37
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 909
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273ffd594c7e0834b93f3e8d11a68d75
+      internalID: -279381544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_38
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 909
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fcadff9725ee834c90e091f828087ee
+      internalID: -654704782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_39
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 909
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66f4e82cf53bd9458fcc615ef9ac9da
+      internalID: -1799272487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_40
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 909
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2558522816176a9468dae8c7f50c9f88
+      internalID: 276636650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_41
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 843
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a65746945993a7409b341411e1c7317
+      internalID: -423991377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_42
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 846
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8438babf26b4c4c83c9aec37e65aeb
+      internalID: 451585270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_43
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 847
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610e927c323ee954a8142d96b692c6ff
+      internalID: 2110797340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_44
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 851
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4412bbcab24294f98f4f064a6f8885
+      internalID: 391156420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_45
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 852
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c47df13578cc047baa1d0e506bdc2c
+      internalID: 248963913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_46
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 850
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ab49933353f5d43bcfa050ec0e5549
+      internalID: -674283039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_47
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 845
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cc560a6ca08ed4f845297ef7a476dc
+      internalID: 1323333099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_48
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 843
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8060329324cca1d469cb37dda384796f
+      internalID: -1685531106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_49
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 775
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590636319cd0a7c439721a7168e66399
+      internalID: -1561911703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_50
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 775
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f3e06c1deb8764db8905c683a4629e
+      internalID: -1321264710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_51
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 778
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ede48904db77b4b87c9697ec3c1c17
+      internalID: -951465699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_52
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 708
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e1534acd7fdbc4cad3f98fbd238e76
+      internalID: -1739824120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_53
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 707
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379d64b7f4c7927479b5d5a52d946c22
+      internalID: -278217807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_54
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 707
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a142a30d4b89d884283b6abcfa14ff89
+      internalID: -983149933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_55
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 707
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3915e109398fe64da1a63f8f53e456f
+      internalID: -1093589956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_56
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 706
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b09435e59e64041ad1ce2990e9e8aa
+      internalID: -492892538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_57
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 712
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1456603e410c1d428f6abf066c1fd9b
+      internalID: 385035198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_58
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 713
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ef218e8c7b332458f163ccb0345b22
+      internalID: 2135265244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_59
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 649
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e7c9ac05f9b55498c2668807d71112
+      internalID: 82431613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_60
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 648
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe84fda281c3270409552bd2b313ac75
+      internalID: 1845366552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_61
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 642
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a5e161d2d48a348aa897f9b52ec2cc
+      internalID: 699147379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_62
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 643
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476ee621bd36da4479b99fe71ca01911
+      internalID: 142777621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_63
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 643
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348abeee11dea414ca47ae2e509e8631
+      internalID: 1340122543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_64
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 643
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739b058dd353dfc49b8a9b901f05362e
+      internalID: 1677024234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_65
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 644
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c14b01deba54c459681d71cf20b467
+      internalID: 1130265797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_66
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 589
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641c9caa5a53a1947bbdb0c3656e1e2c
+      internalID: 548372590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_67
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 589
+        width: 52
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ec48fdabc7ad448b12384edfaa2622
+      internalID: 1254301480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_68
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 589
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc2204e327a2194383d49ae6727aa29
+      internalID: -1289245471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_69
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 589
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad48e47261b62ff4e8ea64bbadcf651e
+      internalID: 493957544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_70
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 589
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aabfb2771004494aa3411c81f414694
+      internalID: -1983611985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_71
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 589
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1959fd3474be418409b57be8863c8b77
+      internalID: -60127694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_72
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 589
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e196312bcccba4c9aa6b93c907822c
+      internalID: -474386209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_73
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 589
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46afdae6b2582e47b9581dbf740eb69
+      internalID: -505000783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_74
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 525
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8237d4d7b7a3b6e4684149e0b70bae6e
+      internalID: 1672241510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_75
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 525
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee92dd3a227a0b41999df933be79228
+      internalID: -532475458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_76
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 525
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecf7fd167f861b47998d5500557e633
+      internalID: -503222747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_77
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 527
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9428a8e1c3c74e4c93f1cde6c385d1c
+      internalID: 283620884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_78
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 528
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bbb8754d97f1646992768822ac38a8
+      internalID: 2111613980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_79
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 528
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21b2b3c40f286a4fa36c57861c8c218
+      internalID: -215976035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_80
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 529
+        width: 50
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709c3c5b7529b014bbed79b06a05dac9
+      internalID: 556539485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_81
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 527
+        width: 50
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b66310be90ff24987762026d7ff462
+      internalID: 971031575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_82
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 459
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03fe9680c3e80f43bdbe2d72e77de63
+      internalID: -359436954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_83
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 459
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01e5538b12fd214eb0115f60eddb6a1
+      internalID: 241994990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_84
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 463
+        width: 50
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e0dc04eae13394ba53c3bcd0b92ed5
+      internalID: -266346184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_85
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 393
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a50ec327b098124590367d2010d18d9
+      internalID: -13484685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_86
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 391
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a239f48d43e6a24eae23fcb634b9656
+      internalID: 368677081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_87
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 391
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82df2a85f0ced684fb5a0db6c37a2581
+      internalID: 423079976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_88
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 391
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b75dfd6a6848d449a82334f753c4946
+      internalID: -1054884348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_89
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 388
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ec2497adfc6064181f545f9c6634d0
+      internalID: 1212803052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_90
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 394
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d142e20ba1c2934483e817e0440eb3d
+      internalID: 547179016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_91
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 395
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2d53cafb9520c428e7b6e47939f700
+      internalID: -1052010318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_92
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 331
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94420f9c530811e45a6c6a4197b65eba
+      internalID: -1627754088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_93
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 330
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83349e8acde7dad478fba341f3eac3ab
+      internalID: 731222440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_94
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 324
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415f7297d936a5845a34bfb37c66489b
+      internalID: -1570549593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_95
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 327
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739a6a2f4d0d87245940e59470043b3b
+      internalID: 1394459977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_96
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 327
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd414c23247bf847920bad8e47a57a1
+      internalID: 1537344285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_97
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 327
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b11f775d238a44f9016adcacbb964e
+      internalID: 202797807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_98
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 329
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bb656e539e4834194c444cd2c28f45
+      internalID: -1287360536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_99
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 269
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1b00b23fe969444a7f7d93ab876bf9
+      internalID: -1126289564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_100
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 269
+        width: 52
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799afe75fc99abf4e856c44dde4a66e3
+      internalID: -778326337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_101
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 269
+        width: 52
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b578c71524973304da5a2f2bcc8b9437
+      internalID: 233944392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_102
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 269
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe9945f383e4014ab01aef40c0289d0
+      internalID: 937547814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_103
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 269
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f08908cb3b215b488c9ce7e0fce9dce
+      internalID: -453187918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_104
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 269
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acda05f0ed607f4aaf43bce15079ed0
+      internalID: -2136110038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_105
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 269
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb25fbaaa3616f46b09265194b9a878
+      internalID: 785546040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_106
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 269
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8979bc9118702574bbd374a6d7b36142
+      internalID: -324830405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_107
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 203
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55e294cf6f6fa640ae4dda29d22a3a3
+      internalID: -1235274139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_108
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 206
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58616d9b514b89b42a73c6046a6c874b
+      internalID: -1090286840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_109
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 207
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034d307e61c98e04eaeace8f81577829
+      internalID: 1418346904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_110
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 211
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c3fac02b54023409b5cea0aba63477
+      internalID: -1341586416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_111
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 212
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1645df8dc043d4b91f50b8c2f3deb6
+      internalID: 897949069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_112
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 210
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f642af201d34aba4485edb447e0622f8
+      internalID: 181722769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_113
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 205
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c3763aec19e2847a6e9f0adfe30ba6
+      internalID: -1002289654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_114
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 203
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1fa70a3c4f19d047ae22eb359e4d804
+      internalID: -1727430988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_115
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 135
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b12aa4a4638e64aacae1a968b0f10a
+      internalID: 119337384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_116
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 135
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa8130ad3eec9f4ab533369407e76a0
+      internalID: -772261678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_117
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 138
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3a10d75d3e54946a20543326a4726a
+      internalID: -967920831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_118
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 68
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aeefa51f1127504b86a8e5841e6a042
+      internalID: 200256993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_119
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 67
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6573d70c15b89b94a9e9536fb6bf225f
+      internalID: -1416879122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_120
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 67
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78336a16fe7707b43a5fb59ca857c7fc
+      internalID: 1341084113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_121
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 67
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f13e2e5144d8142860ed1e2cc7cee0
+      internalID: 962335897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_122
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 66
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347fbad054a98324895cdec6948a7872
+      internalID: -1661017741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_123
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 72
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187b4ffab61e6c849a4e0791044a50f7
+      internalID: 442059035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_124
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 73
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ddce6c7c7fc3b34e94f9a94d749c593
+      internalID: 395522966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_125
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 9
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1cff8831f584e4f9dcc35a54cac7c8
+      internalID: 370511689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_126
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 8
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03504a6af8855724eb5498c6c9bf1db6
+      internalID: -859577483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_127
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 2
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f41ff433b758ba4eb49254f47075095
+      internalID: -1916967968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_128
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 3
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1345b667998781242bd44b912fadb363
+      internalID: -1644778852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_129
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 3
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7697d4b41e5eba0468462e97d80f3132
+      internalID: 808139657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_130
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 3
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ef4de76c1edaf408bafc27190b23b7
+      internalID: -1760043793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: green_endsega64_131
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 4
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4cfd9b5ec2c8d942b7d85daabd4eda3
+      internalID: 2065118936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +2910,139 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      green_endsega64_107: -1235274139
+      green_endsega64_12: -1672928104
+      green_endsega64_103: -453187918
+      green_endsega64_19: 575000703
+      green_endsega64_88: -1054884348
+      green_endsega64_67: 1254301480
+      green_endsega64_70: -1983611985
+      green_endsega64_57: 385035198
+      green_endsega64_120: 1341084113
+      green_endsega64_102: 937547814
+      green_endsega64_43: 2110797340
+      green_endsega64_116: -772261678
+      green_endsega64_81: 971031575
+      green_endsega64_89: 1212803052
+      green_endsega64_111: 897949069
+      green_endsega64_82: -359436954
+      green_endsega64_115: 119337384
+      green_endsega64_20: -645423164
+      green_endsega64_54: -983149933
+      green_endsega64_59: 82431613
+      green_endsega64_128: -1644778852
+      green_endsega64_21: 175528414
+      green_endsega64_39: -1799272487
+      green_endsega64_31: 943563132
+      green_endsega64_55: -1093589956
+      green_endsega64_51: -951465699
+      green_endsega64_60: 1845366552
+      green_endsega64_76: -503222747
+      green_endsega64_46: -674283039
+      green_endsega64_101: 233944392
+      green_endsega64_109: 1418346904
+      green_endsega64_127: -1916967968
+      green_endsega64_112: 181722769
+      green_endsega64_108: -1090286840
+      green_endsega64_121: 962335897
+      green_endsega64_125: 370511689
+      green_endsega64_16: 2018240461
+      green_endsega64_34: -1163331886
+      green_endsega64_100: -778326337
+      green_endsega64_80: 556539485
+      green_endsega64_104: -2136110038
+      green_endsega64_37: -279381544
+      green_endsega64_66: 548372590
+      green_endsega64_18: 1445341150
+      green_endsega64_48: -1685531106
+      green_endsega64_73: -505000783
+      green_endsega64_9: 375080594
+      green_endsega64_47: 1323333099
+      green_endsega64_25: 302269642
+      green_endsega64_85: -13484685
+      green_endsega64_117: -967920831
+      green_endsega64_84: -266346184
+      green_endsega64_129: 808139657
+      green_endsega64_97: 202797807
+      green_endsega64_36: 1426594870
+      green_endsega64_95: 1394459977
+      green_endsega64_87: 423079976
+      green_endsega64_69: 493957544
+      green_endsega64_79: -215976035
+      green_endsega64_106: -324830405
+      green_endsega64_64: 1677024234
+      green_endsega64_68: -1289245471
+      green_endsega64_58: 2135265244
+      green_endsega64_30: -1905904839
+      green_endsega64_27: -1203705261
+      green_endsega64_45: 248963913
+      green_endsega64_119: -1416879122
+      green_endsega64_50: -1321264710
+      green_endsega64_71: -60127694
+      green_endsega64_32: -1154182656
+      green_endsega64_11: 682187828
+      green_endsega64_96: 1537344285
+      green_endsega64_123: 442059035
+      green_endsega64_122: -1661017741
+      green_endsega64_114: -1727430988
+      green_endsega64_77: 283620884
+      green_endsega64_78: 2111613980
+      green_endsega64_93: 731222440
+      green_endsega64_44: 391156420
+      green_endsega64_113: -1002289654
+      green_endsega64_74: 1672241510
+      green_endsega64_72: -474386209
+      green_endsega64_90: 547179016
+      green_endsega64_4: 1432464974
+      green_endsega64_15: 396507540
+      green_endsega64_130: -1760043793
+      green_endsega64_29: -1863065754
+      green_endsega64_63: 1340122543
+      green_endsega64_56: -492892538
+      green_endsega64_24: 253305693
+      green_endsega64_3: -1108388943
+      green_endsega64_2: -1289334196
+      green_endsega64_13: 782768060
+      green_endsega64_83: 241994990
+      green_endsega64_14: 1016183351
+      green_endsega64_26: 1813704972
+      green_endsega64_41: -423991377
+      green_endsega64_52: -1739824120
+      green_endsega64_40: 276636650
+      green_endsega64_94: -1570549593
+      green_endsega64_65: 1130265797
+      green_endsega64_22: -1247897887
+      green_endsega64_126: -859577483
+      green_endsega64_98: -1287360536
+      green_endsega64_38: -654704782
+      green_endsega64_28: 675383543
+      green_endsega64_8: -1561912188
+      green_endsega64_86: 368677081
+      green_endsega64_75: -532475458
+      green_endsega64_91: -1052010318
+      green_endsega64_105: 785546040
+      green_endsega64_124: 395522966
+      green_endsega64_7: -804849741
+      green_endsega64_42: 451585270
+      green_endsega64_23: 1959158566
+      green_endsega64_61: 699147379
+      green_endsega64_1: -388433311
+      green_endsega64_92: -1627754088
+      green_endsega64_49: -1561911703
+      green_endsega64_118: 200256993
+      green_endsega64_62: 142777621
+      green_endsega64_0: 1441015480
+      green_endsega64_53: -278217807
+      green_endsega64_131: 2065118936
+      green_endsega64_10: -1832833573
+      green_endsega64_99: -1126289564
+      green_endsega64_6: 406413116
+      green_endsega64_5: -1838320718
+      green_endsega64_17: 251617899
+      green_endsega64_33: -123924988
+      green_endsega64_35: -1967053312
+      green_endsega64_110: -1341586416
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

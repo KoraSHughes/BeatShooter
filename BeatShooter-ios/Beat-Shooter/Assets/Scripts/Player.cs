@@ -90,16 +90,19 @@ public class Player : MonoBehaviour
                         }
 
                         GameObject newBullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-                        if (myAngle == 180){
+                        if (myAngle == 180){    // facing down
+                            newBullet.transform.localRotation = Quaternion.Euler(0, 0, 180);
                             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -bulletSpeed));
                         }
-                        else if (myAngle == 0){
+                        else if (myAngle == 0){ // facing up
                             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bulletSpeed));
                         }
-                        else if (myAngle == -90){
+                        else if (myAngle == -90){   // facing right
+                            newBullet.transform.localRotation = Quaternion.Euler(0, 0, -90);
                             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletSpeed, 0));
                         }
-                        else{
+                        else{   // facing left
+                            newBullet.transform.localRotation = Quaternion.Euler(0, 0, 90);
                             newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bulletSpeed, 0));
                         }
                         timeToShoot = 0.1f;
