@@ -13,15 +13,13 @@ public class Enemy : MonoBehaviour
 
     int eVal = 5;
 
-    GameManager _gameManager;
+    // GameManager _gameManager;
 
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _gameManager = GameObject.FindObjectOfType<GameManager>();
- 
-
+        // _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
 
@@ -40,7 +38,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         else if (other.CompareTag("Player")){
-            _gameManager.GameOver();
+            // _gameManager.GameOver();
             Instantiate(explo3, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
         }
