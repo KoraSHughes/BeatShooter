@@ -26,13 +26,13 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("bullet1") && type == true){
-            _gameManager.AddScore(eVal);
+            // _gameManager.AddScore(eVal);
             Instantiate(explo1, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
         else if (other.CompareTag("bullet2") && type == false){
-            _gameManager.AddScore(eVal);
+            // _gameManager.AddScore(eVal);
             Instantiate(explo2, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
