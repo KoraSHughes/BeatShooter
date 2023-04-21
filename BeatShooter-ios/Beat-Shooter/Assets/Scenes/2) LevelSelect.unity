@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 897826087}
   - component: {fileID: 897826088}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Song Select Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

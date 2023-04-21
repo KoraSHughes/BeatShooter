@@ -36,4 +36,9 @@ public class Button : MonoBehaviour
     public void PlaySongThree() {
         SceneManager.LoadScene(4);
     }
+
+    public void Restart() {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
 }
