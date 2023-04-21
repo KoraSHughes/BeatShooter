@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private float width;
     private float height;
-    float touch_threshold = 0.0f;
+    float touch_threshold = 0.4f;
 
     void Start()
     {
@@ -108,20 +108,17 @@ public class Player : MonoBehaviour
                         timeToShoot = 0.1f;
                     }
                 }
-            }
-            else if (i > 0 && Input.touchCount == 2 && touch.phase == TouchPhase.Began){
-                // swap guns
-                if (gunType){
-                    gunType = false;
-                    sprite.color = color2;
-                }
                 else{
-                    gunType = true;
-                    sprite.color = color1;
+                     // swap guns
+                    if (gunType){
+                        gunType = false;
+                        sprite.color = color2;
+                    }
+                    else{
+                        gunType = true;
+                        sprite.color = color1;
+                    }
                 }
-            }
-            else if (i > 0 && Input.touchCount == 3 && touch.phase == TouchPhase.Began){
-                //TODO: open pause menu
             }
         }
     }
