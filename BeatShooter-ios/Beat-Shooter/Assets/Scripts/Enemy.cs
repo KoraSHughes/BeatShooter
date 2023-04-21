@@ -11,8 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject explo2;
     public GameObject explo3;
 
-    int eVal = 5;
-
+    // int eVal = 5;
     // GameManager _gameManager;
 
 

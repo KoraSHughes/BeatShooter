@@ -16,50 +16,74 @@ public class EnemySpawner : MonoBehaviour
 
     float mytime = 0;
 
-    private string level = "w.......a.......s.......d..............";
-    private float bps = 4;
+    public TextAsset map = null;
+    private float songBpm;
+    private float secPerBeat;
+    private float firstBeatOffset;
+    private static float songPos;
+    private static float songPosInBeats;
+    private float dspSongTime;
 
-    int i = 0;
-    bool etype = true;
+
+    private string level = "w.......a.......s.......d..............";
+    private string enemyType = "";
+
+    private float bps = 4;
+    int i = 0;  // position in level
 
     void Start()
     {
-        level = generateLevel();
-        // Debug.Log("LEVEL: " + level);
+        if (map == null){  // no map selected
+            level = randomLevel();
+            enemyType = randomEtypes();
+        }
+        else{
+            mapToLevel();
+        }
+
+        if (level.Length != enemyType.Length){  // double check
+            Debug.LogError("Level & Enemy Type Definition Incongruent\n"+level+"\n"+enemyType);
+        }
     }
     // Update is called once per frame
     void Update()
-    {
+    {  // run map
         mytime += Time.deltaTime;
 
         if (i < level.Length && mytime >= (1/bps)){
             if (level[i] == '.'){
                 // skip
-                // Debug.Log("Skipping beat");
-            }
-            else if (level[i] == 'w'){
-                spawnTop(randomBoolean());
-            }
-            else if (level[i] == 'a'){
-                spawnLeft(randomBoolean());
-            }
-            else if (level[i] == 's'){
-                spawnBottom(randomBoolean());
-            }
-            else if (level[i] == 'd'){
-                spawnRight(randomBoolean());
             }
             else{
-                Debug.Log("Error on Level String: " + level[i]);
+                bool eType = true;
+                switch (enemyType[i]) {
+                    case 'a':
+                        eType = true;
+                        break;
+                    case 'b':
+                        eType = false;
+                        break;
+                    default:
+                        Debug.Log("Error on reading level enemy type: " + enemyType[i]);
+                        break;
+                }
+                if (level[i] == 'w'){
+                    spawnTop(eType);
+                }
+                else if (level[i] == 'a'){
+                    spawnLeft(eType);
+                }
+                else if (level[i] == 's'){
+                    spawnBottom(eType);
+                }
+                else if (level[i] == 'd'){
+                    spawnRight(eType);
+                }
+                else{
+                    Debug.Log("Error on Level String: " + level[i]);
+                }
             }
             mytime = 0;
-
-            if (etype == true){
-                etype = false;
-            }
-            else{
-                etype = true;
-            }
             i += 1;
         }
         else{
@@ -106,17 +130,13 @@ public class EnemySpawner : MonoBehaviour
         newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, eSpeed/2));
     }
 
-    private bool randomBoolean(){
-        float randnum = Random.Range(0, 10);
-        if (randnum >= 5)
-        {
-            return true;
-        }
-        return false;
+
+    private bool randBool(){
+        return Random.value >= 0.5f;
     }
     private string randomLetter(){
-        bool a = randomBoolean();
-        bool b = randomBoolean();
+        bool a = randBool();
+        bool b = randBool();
         if (a) {
             if (b){
                 return "w";
@@ -142,7 +162,8 @@ public class EnemySpawner : MonoBehaviour
         return retstring;
     }
 
-    private string generateLevel(){
+    private string randomLevel(){
+        Debug.Log("**GENERATING RANDOM LEVEL**");
         string retstring = "";
         for (int i = 0; i < 8; i++) {
             retstring += randomLetter() + "..........";
@@ -183,5 +204,87 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         return retstring;
+    }
+
+    private string randomEtypes(){
+        string outTypes = "";
+        for (int i=0; i < level.Length; i++){
+            if (level[i] == '.'){
+                outTypes += ".";
+            }
+            else{
+                outTypes += (randBool()) ? 'a':'b';
+            }
+        }
+        return outTypes;
+    }
+
+    private float beatDiv = 16.0f;  // 16th notes
+    private void mapToLevel(){
+        Debug.Log("*reading map file...");
+        string outNotes = "";
+        string outEtypes = "";
+        string fs = map.text;
+        string[] maplines = fs.Split('\n');
+
+        var metadata = maplines[0].Split(' ');
+        Debug.Log(metadata[0] + " " + metadata[1] + " " + metadata[2]);
+
+        songBpm = float.Parse(metadata[0].Substring(1));
+        bps = songBpm*60.0f*beatDiv;  // bps * note subdivision: this makes sure that notes must fall on beat
+        Debug.Log("songBpm:" + songBpm);
+        
+        // endMarker = float.Parse(metadata[2]);
+        // Debug.Log(endMarker);
+
+        float offset = float.Parse(metadata[1]);
+        for(int i=0; i < (int)(offset*bps); i++){
+            outNotes += '.';
+        }
+        Debug.Log("songOffset:" + offset);
+
+        float last_time = 0f;
+        for(int i=1; i<maplines.Length; i++){
+            string[] noteInfo = maplines[i].Split(' ');
+            if (noteInfo[0].Contains("/") || noteInfo.Length==1)
+                continue; // skip comments
+
+            // adding time spacing
+            float noteTime = float.Parse(noteInfo[2]);
+            int timing = (int)Mathf.Round((noteTime-last_time)*bps);
+            for(int j=0; j < timing; j++){
+                outNotes += ".";
+                outEtypes += ".";
+            }
+            last_time = noteTime; // update the global time of the last note for the next note
+
+            // adding enemy type info
+            string noteType = noteInfo[1];
+            switch (noteType){
+                case "COLORA":
+                    outEtypes += 'a';
+                    break;
+                case "COLORB":
+                    outEtypes += 'b';
+                    break;
+                default:
+                    Debug.Log("wrong note type read: " + noteType);
+                    outEtypes += '.';
+                    break;
+            }
+
+            // append actual note
+            if ("wasd".Contains(noteInfo[0])){
+                outNotes += noteInfo[0];
+            }
+            else {
+                Debug.Log("Actual note not readable?: " + noteInfo[0]);
+                outNotes += '.';
+            }
+            
+        }
+        Debug.Log("...map finished parsing");
+        level = outNotes;  // write to globals
+        enemyType = outEtypes;
     }
 }
