@@ -15,6 +15,7 @@ TagManager:
   - Settings Menu UI
   - Background
   - Start Button UI
+  - Song Select Menu UI
   layers:
   - Default
   - TransparentFX

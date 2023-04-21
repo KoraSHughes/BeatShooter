@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
     public GameObject settingsMenu;
+    public GameObject songSelectMenu;
     
     public TextMeshProUGUI scoreUI;
     public TextMeshProUGUI titleUI;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        songSelectMenu.SetActive(false);
     }
 
     public void Update(){
@@ -68,8 +70,14 @@ public class GameManager : MonoBehaviour
         if (UI == "background") {
             background.SetActive(io);
         }
-        else if (UI == "startbutton") {
+        else if (UI == "startButton") {
             startButton.SetActive(io);
+        }
+        else if (UI == "songSelectMenu") {
+            songSelectMenu.SetActive(io);
+        }
+        else if (UI == "settingsMenu") {
+            settingsMenu.SetActive(io);
         }
     }
 
