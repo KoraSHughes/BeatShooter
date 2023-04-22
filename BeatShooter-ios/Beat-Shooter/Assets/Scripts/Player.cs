@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private float height;
     float touch_threshold = 0.4f;
 
+    private int health = 2;  // number of hits player can take
+
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -147,5 +149,10 @@ public class Player : MonoBehaviour
         }
         ret += "]";
         return ret;
+    }
+
+    public bool damage(int new_damage){
+        health -= new_damage;
+        return health > 0;
     }
 }
