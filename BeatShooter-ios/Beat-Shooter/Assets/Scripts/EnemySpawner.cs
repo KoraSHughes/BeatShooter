@@ -269,7 +269,7 @@ public class EnemySpawner : MonoBehaviour
                     break;
                 default:
                     Debug.Log("wrong note type read: " + noteType);
-                    outEtypes += '.';
+                    // outEtypes += '.';
                     break;
             }
 
@@ -279,7 +279,7 @@ public class EnemySpawner : MonoBehaviour
             }
             else {
                 Debug.Log("Actual note not readable?: " + noteInfo[0]);
-                outNotes += '.';
+                // outNotes += '.';
             }
             
         }
