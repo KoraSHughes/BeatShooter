@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject explo2;
     public GameObject smallexplo;
     public GameObject bigexplo;
+    public GameManager _gameManager;
 
     // int eVal = 5;
     // GameManager _gameManager;
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        // _gameManager = GameObject.FindObjectOfType<GameManager>();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
 
@@ -39,7 +40,6 @@ public class Enemy : MonoBehaviour
             }
         }
         else if (other.CompareTag("Player")){
-            // _gameManager.GameOver();
             bool isAlive = other.GetComponent<Player>().damage(1);
             if (isAlive){
                  Instantiate(smallexplo, other.transform.position, Quaternion.identity);
@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
             else{
                 Instantiate(bigexplo, other.transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
+                _gameManager.GameOver();
             }
             
         }

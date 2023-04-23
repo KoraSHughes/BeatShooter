@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private float height;
     float touch_threshold = 0.4f;
 
-    private int health = 2;  // number of hits player can take
+    public int health = 2;  // number of hits player can take
 
     void Start()
     {

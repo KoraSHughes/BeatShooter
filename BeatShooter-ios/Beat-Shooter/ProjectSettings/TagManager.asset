@@ -16,6 +16,9 @@ TagManager:
   - Background
   - Start Button UI
   - Song Select Menu UI
+  - Pause Close Button
+  - Level Cleared Menu UI
+  - You Win Menu UI
   layers:
   - Default
   - TransparentFX
