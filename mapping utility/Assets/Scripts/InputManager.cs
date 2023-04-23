@@ -56,38 +56,38 @@ public class InputManager : MonoBehaviour
 
         //left press down check
         if (Input.GetKeyDown(left[0])) {
-            direction = "l";
+            direction = "a";
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(left[1])) {
-            direction = "l";
+            direction = "a";
             pressDownHelper(1);
         }
         //up press down check
         else if (Input.GetKeyDown(up[0])) {
-            direction = "u";
+            direction = "w";
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(up[1])) {
-            direction = "u";
+            direction = "w";
             pressDownHelper(1);
         }
 
         else if (Input.GetKeyDown(down[0])) {
-            direction = "d";
+            direction = "s";
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(down[1])) {
-            direction = "d";
+            direction = "s";
             pressDownHelper(1);
         }
 
         else if (Input.GetKeyDown(right[0])) {
-            direction = "r";
+            direction = "d";
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(right[1])) {
-            direction = "r";
+            direction = "d";
             pressDownHelper(1);
         }
         
