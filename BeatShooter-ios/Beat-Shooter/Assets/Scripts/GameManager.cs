@@ -26,11 +26,13 @@ public class GameManager : MonoBehaviour
         else{
             DontDestroyOnLoad(gameObject);
         }
-
+        background.SetActive(true);
+        startButton.SetActive(true);
         pauseButton.SetActive(false);
+        settingsButton.SetActive(true);
         pauseMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
         settingsMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(false);
     }
 
@@ -87,7 +89,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void Next() {
-        
+
     }
 
     public void LevelUISettings() {
