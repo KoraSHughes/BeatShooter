@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private float width;
     private float height;
-    float touch_threshold = 0.4f;
+    float touch_threshold = 0.2f;
 
     public int health = 2;  // number of hits player can take
 
@@ -55,10 +55,11 @@ public class Player : MonoBehaviour
         for (int i=0; i < Input.touchCount; ++i){  // track all touches
             Touch touch = Input.GetTouch(i);
             Vector2 pos = cam.ScreenToWorldPoint(touch.position); 
+            int touch_reigon = get_reigon(pos);
 
             if (i == 0 && touch.phase == TouchPhase.Began){
-                Debug.Log("Touches " + Input.touchCount.ToString() + ": " + pos.ToString());
-                int touch_reigon = get_reigon(pos);
+                // Debug.Log("Touches " + Input.touchCount.ToString() + ": " + pos.ToString());
+                // int touch_reigon = get_reigon(pos);
                 
                 // rotate user based on reigon
                 switch (touch_reigon)
@@ -127,13 +128,13 @@ public class Player : MonoBehaviour
 
     int get_reigon(Vector2 touchPos){
         // returns screen reigon {left: 1, right: 2, up: 3, down: 4} & 0 is not far enough
+        Debug.Log("Comparing:" + touchPos.ToString() + " vs. " + (width*touch_threshold, height*touch_threshold).ToString());
         if (Mathf.Abs(touchPos.x) < width*touch_threshold ||
             Mathf.Abs(touchPos.y) < height*touch_threshold) {
                 return 0;
         }
         else{
-            float diff = Mathf.Abs(touchPos.x) - Mathf.Abs(touchPos.y);
-            if (diff > 0){  // x movement
+            if (Mathf.Abs(touchPos.x) > Mathf.Abs(touchPos.y)){  // x movement
                 return (touchPos.x > 0) ? 2 : 1;
             }
             else{
