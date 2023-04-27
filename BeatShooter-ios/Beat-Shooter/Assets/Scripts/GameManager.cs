@@ -63,7 +63,15 @@ public class GameManager : MonoBehaviour
     }
 
     public void Update(){
-
+        if (Player.health == 2) {
+            heart3.SetActive(false);
+        }
+        else if (Player.health == 1) {
+            heart2.SetActive(false);
+        }
+        else if (Player.health == 0) {
+            heart1.SetActive(false);
+        }
 
 
 #if !UNITY_WEBGL  // for webGL need platform conditional because it will just freeze otherwise
