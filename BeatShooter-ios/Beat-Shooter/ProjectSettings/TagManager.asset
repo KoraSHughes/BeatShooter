@@ -19,6 +19,12 @@ TagManager:
   - Pause Close Button
   - Level Cleared Menu UI
   - You Win Menu UI
+  - Heart1
+  - Heart2
+  - Heart3
+  - Heart1Border
+  - Heart2Border
+  - Heart3Border
   layers:
   - Default
   - TransparentFX

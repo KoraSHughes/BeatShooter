@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,12 @@ public class GameManager : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject gameOverMenu;
     public GameObject songSelectMenu;
-    
+    private GameObject heart1;
+    private GameObject heart2;
+    private GameObject heart3;
+    private GameObject heart1border;
+    private GameObject heart2border;
+    private GameObject heart3border;    
     public TextMeshProUGUI scoreUI;
     public TextMeshProUGUI titleUI;
     
@@ -26,6 +32,14 @@ public class GameManager : MonoBehaviour
         else{
             DontDestroyOnLoad(gameObject);
         }
+
+        heart1 = GameObject.FindGameObjectWithTag("Heart1");
+        heart2 = GameObject.FindGameObjectWithTag("Heart2");
+        heart3 = GameObject.FindGameObjectWithTag("Heart3");
+        heart1border = GameObject.FindGameObjectWithTag("Heart1Border");
+        heart2border = GameObject.FindGameObjectWithTag("Heart2Border");
+        heart3border = GameObject.FindGameObjectWithTag("Heart3Border");
+
         background.SetActive(true);
         startButton.SetActive(true);
         pauseButton.SetActive(false);
@@ -34,6 +48,7 @@ public class GameManager : MonoBehaviour
         settingsMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(false);
+        HealthUI(false);
     }
 
     public void Update(){
@@ -57,6 +72,7 @@ public class GameManager : MonoBehaviour
         settingsMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(true);
+        HealthUI(false);
     }
 
     public void MainMenu() {
@@ -69,6 +85,7 @@ public class GameManager : MonoBehaviour
         settingsMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(false);
+        HealthUI(false);
         Time.timeScale = 1f;
     }
 
@@ -106,6 +123,7 @@ public class GameManager : MonoBehaviour
         // IO(false, "settingsMenu");
         // IO(true, "pauseButton");
         // IO(false, "settingsButton");
+        HealthUI(true);
     }
 
     private void Start(){
@@ -153,5 +171,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void HealthUI(bool io) {
+        heart1.SetActive(io);
+        heart2.SetActive(io);
+        heart3.SetActive(io);
+        heart1border.SetActive(io);
+        heart2border.SetActive(io);
+        heart3border.SetActive(io);
+    }
+
+    public void HealthUIColor(Color color) {
+        Image heart1image = heart1.GetComponent<Image>();
+        heart1image.color = color;
+    }
 }
 

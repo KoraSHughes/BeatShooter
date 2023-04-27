@@ -785,8 +785,8 @@ GameObject:
   - component: {fileID: 143920998}
   - component: {fileID: 143920997}
   m_Layer: 0
-  m_Name: Heart
-  m_TagString: Untagged
+  m_Name: Heart 3
+  m_TagString: Heart3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4355,8 +4355,8 @@ GameObject:
   - component: {fileID: 1059221082}
   - component: {fileID: 1059221081}
   m_Layer: 0
-  m_Name: Heart
-  m_TagString: Untagged
+  m_Name: Heart 2
+  m_TagString: Heart2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4394,7 +4394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.015686275, g: 0.19215688, b: 0.37647063, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4610,8 +4610,8 @@ GameObject:
   - component: {fileID: 1186730633}
   - component: {fileID: 1186730632}
   m_Layer: 0
-  m_Name: Heart
-  m_TagString: Untagged
+  m_Name: Heart 1
+  m_TagString: Heart1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4649,7 +4649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.015686275, g: 0.19215688, b: 0.37647063, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8132,8 +8132,8 @@ GameObject:
   - component: {fileID: 1833501599}
   - component: {fileID: 1833501598}
   m_Layer: 0
-  m_Name: Heart Border
-  m_TagString: Untagged
+  m_Name: Heart 2 Border
+  m_TagString: Heart2Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8171,7 +8171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.14901961, b: 0.29803923, a: 1}
+  m_Color: {r: 0.5, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8841,8 +8841,8 @@ GameObject:
   - component: {fileID: 1983156654}
   - component: {fileID: 1983156653}
   m_Layer: 0
-  m_Name: Heart Border
-  m_TagString: Untagged
+  m_Name: Heart 3 Border
+  m_TagString: Heart3Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9188,8 +9188,8 @@ GameObject:
   - component: {fileID: 2030559191}
   - component: {fileID: 2030559190}
   m_Layer: 0
-  m_Name: Heart Border
-  m_TagString: Untagged
+  m_Name: Heart 1 Border
+  m_TagString: Heart1Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9212,7 +9212,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 35, y: -35}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 73, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030559190
 MonoBehaviour:
@@ -9227,7 +9227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.14901961, b: 0.29803923, a: 1}
+  m_Color: {r: 0.5, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

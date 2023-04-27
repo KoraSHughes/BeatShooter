@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	Rigidbody2D _rigidbody2D;
+	public GameManager _gameManager;
+    Rigidbody2D _rigidbody2D;
     SpriteRenderer sprite;
     public Transform spawnPoint;
 
@@ -26,11 +27,12 @@ public class Player : MonoBehaviour
     private float height;
     float touch_threshold = 0.2f;
 
-    public int health = 2;  // number of hits player can take
+    private int health = 3;  // number of hits player can take
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
         sprite = GetComponent<SpriteRenderer>();
         color1 = bulletPrefab1.GetComponent<SpriteRenderer>().color;
         color2 = bulletPrefab2.GetComponent<SpriteRenderer>().color;
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(health);
         if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;
         }
@@ -116,10 +119,13 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
+                        _gameManager.HealthUIColor(color2);
+                        
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
+                        _gameManager.HealthUIColor(color1);
                     }
                 }
             }
