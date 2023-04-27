@@ -19,11 +19,17 @@ public class GameManager : MonoBehaviour
     private GameObject heart1;
     private GameObject heart2;
     private GameObject heart3;
-    private GameObject heart1border;
-    private GameObject heart2border;
-    private GameObject heart3border;    
+    // private GameObject heart1border;
+    // private GameObject heart2border;
+    // private GameObject heart3border;    
     public TextMeshProUGUI scoreUI;
     public TextMeshProUGUI titleUI;
+
+    private Image heart1image;
+    private Image heart2image;
+    private Image heart3image;
+    private Color blue = new Color(0.01568628f, 0.1921569f, 0.3764706f, 1.0f);
+    private Color red = new Color(0.5f, 0.0f, 0.0f, 1.0f);
     
     private void Awake(){
         if (GameObject.FindObjectsOfType<GameManager>().Length > 1){
@@ -36,9 +42,14 @@ public class GameManager : MonoBehaviour
         heart1 = GameObject.FindGameObjectWithTag("Heart1");
         heart2 = GameObject.FindGameObjectWithTag("Heart2");
         heart3 = GameObject.FindGameObjectWithTag("Heart3");
-        heart1border = GameObject.FindGameObjectWithTag("Heart1Border");
-        heart2border = GameObject.FindGameObjectWithTag("Heart2Border");
-        heart3border = GameObject.FindGameObjectWithTag("Heart3Border");
+        
+        heart1image = heart1.GetComponent<Image>();
+        heart2image = heart2.GetComponent<Image>();
+        heart3image = heart3.GetComponent<Image>();
+
+        // heart1border = GameObject.FindGameObjectWithTag("Heart1Border");
+        // heart2border = GameObject.FindGameObjectWithTag("Heart2Border");
+        // heart3border = GameObject.FindGameObjectWithTag("Heart3Border");
 
         background.SetActive(true);
         startButton.SetActive(true);
@@ -124,6 +135,7 @@ public class GameManager : MonoBehaviour
         // IO(true, "pauseButton");
         // IO(false, "settingsButton");
         HealthUI(true);
+        HealthUIColor("red");
     }
 
     private void Start(){
@@ -175,14 +187,21 @@ public class GameManager : MonoBehaviour
         heart1.SetActive(io);
         heart2.SetActive(io);
         heart3.SetActive(io);
-        heart1border.SetActive(io);
-        heart2border.SetActive(io);
-        heart3border.SetActive(io);
+        // heart1border.SetActive(io);
+        // heart2border.SetActive(io);
+        // heart3border.SetActive(io);
     }
 
-    public void HealthUIColor(Color color) {
-        Image heart1image = heart1.GetComponent<Image>();
-        heart1image.color = color;
+    public void HealthUIColor(string color) {
+        if (color == "blue") {   // blue
+            heart1image.color = blue;
+            heart2image.color = blue;
+            heart3image.color = blue;
+        } else {
+            heart1image.color = red;
+            heart2image.color = red;
+            heart3image.color = red;
+        }
     }
 }
 

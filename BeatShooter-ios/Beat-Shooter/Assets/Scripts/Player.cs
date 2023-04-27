@@ -119,13 +119,13 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
-                        _gameManager.HealthUIColor(color2);
+                        _gameManager.HealthUIColor("red");
                         
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
-                        _gameManager.HealthUIColor(color1);
+                        _gameManager.HealthUIColor("blue");
                     }
                 }
             }
