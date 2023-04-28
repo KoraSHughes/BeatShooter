@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5863592150279704632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5863592150279704630}
+  - component: {fileID: 5863592150279704633}
+  m_Layer: 0
+  m_Name: Conductor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5863592150279704630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863592150279704632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.4422026, y: -0.96623963, z: 0.07272825}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5863592150279704633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863592150279704632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c23052559f7364db0f7cee25e1664f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGO: {fileID: 887420968945485305, guid: d03e2404949e7480baa8e13dcd9d7f9d, type: 3}
+  hitAudio: {fileID: 0}
+  recorder: {fileID: 0}
+  rStats: {fileID: 0}
+  songBpm: 0
+  secPerBeat: 0
+  songPos: 0
+  songPosInBeats: 0
+  dspSongTime: 0
+  firstBeatOffSet: 0
+  _audioSource: {fileID: 0}
+  notes: []
+  otherNoteInfo: []
+  nextIndex: 0
+  beatsSpawned: 0
+  songPlayOffset: 0
+  hitAccuracy: 0
+  top: {fileID: 0}
+  bottom: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  enemy1: {fileID: 0}
+  enemy2: {fileID: 0}
+  map: {fileID: 0}
+  currentTrack: 0
+  enemyKillWindow: 0.06
+  combo: 0
+  score: 0
+  targetScore: 0
