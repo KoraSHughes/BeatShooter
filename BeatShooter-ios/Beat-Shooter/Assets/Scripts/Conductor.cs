@@ -33,12 +33,16 @@ public class Conductor : MonoBehaviour
 
     //public MusicNote notePrefab;
     //public MusicNote hazardPrefab;
+    
+    public GameObject top;
+    public GameObject bottom;
+    public GameObject left;
+    public GameObject right;
 
-    public float[] xLoc; //l: 0, u: 1, d: 2, r: 3
-    public float[] yLoc;
+    public GameObject enemy1;
+    public GameObject enemy2;
 
     public TextAsset map;
-    public Transform[] spawnpoint;
 
     [HideInInspector]
     List<Enemy> spawnedEnemies;
@@ -61,15 +65,15 @@ public class Conductor : MonoBehaviour
 
     void Awake() {
         instance = this;
-        //GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
-        //GameStateManager.Instance.SetState(GameState.Gameplay);
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+        GameStateManager.Instance.SetState(GameState.Gameplay);
         var rObj = Instantiate(recorder);
         rStats = rObj.GetComponent<Recorder>();
         done = false;
     }
 
     void OnDestroy() {
-        //GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
     }
 
     void Start() {
@@ -90,6 +94,51 @@ public class Conductor : MonoBehaviour
     void Update() {
         songPos = (float)(AudioSettings.dspTime - dspSongTime - firstBeatOffSet);
         songPosInBeats = songPos / secPerBeat;
+
+        // SPAAAAAAAAAAAAAWN NOTES
+        if(nextIndex < notes.Count && notes[nextIndex].y < songPosInBeats + enemiesSpawned){
+            //print(spawnpoint.position + " " + Quaternion.identity);
+            Enemy _enemy;
+            NoteTypes nt = NoteTypes.single;
+            if(Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 0 || Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 1){ //Note is not a hazard
+                _enemy = Instantiate(notePrefab, spawnpoint.position, Quaternion.identity);
+                if(Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 1){
+                    nt = NoteTypes.hold;
+                }
+            }else{ // note is a hazard
+                _enemy = Instantiate(hazardPrefab, spawnpoint.position, Quaternion.identity);
+                nt = NoteTypes.hazard;
+            }
+
+            float ty = notes[nextIndex].x == 0 ? laneY1 : laneY2;
+
+            m.Initialize(ty, startX, endX, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].y, nt);
+            spawnedNotes.Add(m);
+            nextIndex++;
+        }
+        
+        for(int i = 0; i<2; i++){
+            if(heldTracks[i]){
+                if(heldNotes[i]){
+                    holdParticles[i].SetActive(true);
+                    if(holdTimer[i] <= 0){
+                        holdTimer[i] = holdInterval;
+                        combo++;
+                        hitAudio.Play();
+                    }
+                }else{
+                    holdParticles[i].SetActive(false);
+                }
+                
+                if(holdTimer[i] > 0)
+                    holdTimer[i] -= Time.deltaTime;
+            }else{
+                for(int pi=i*2; pi<(i*2+2); pi++){
+                    holdParticles[i].SetActive(false);
+                }
+            }
+        }
+
 
         if (_audioSource.time<=0 && spawnedEnemies.Count>0) {
             if (endTimer > 0) {
@@ -131,21 +180,20 @@ public class Conductor : MonoBehaviour
             string[] nn = maplines[i].Split(' ');
             if (nn[0].Contains("/") || nn.Length==1)
                 continue;
-            float tx = float.Parse(nn[0]);
+            char lane = float.Parse(nn[0]);
             float ty = float.Parse(nn[2]) + offset;
             //print(tx + " " + ty);
-            notes.Add(new Vector2(tx, ty));
+            notes.Add(new Vector2(lane, ty));
             
-            //additional info (TYPEVAL: 0 = color a, 1 = color b)
+            //additional info (TYPEVAL: 1 = color a, 2 = color b)
             int typeVal = 0;
-            float endBeat = 0;
-            if(nn[1] == "COLORA"){
-                typeVal = 0;
-            }else if(nn[1] == "COLORB"){
+            if (nn[1] == "COLORA") {
+                typeVal = 1;
+            }else if (nn[1] == "COLORB") {
                 typeVal = 2;
             }
 
-            otherNoteInfo.Add(new Vector3(typeVal, endBeat, 0));
+            otherNoteInfo.Add(new Vector3(typeVal, 0));
         }
     }
 
@@ -226,7 +274,7 @@ public class Conductor : MonoBehaviour
         }
     }
 
-/*     private void OnGameStateChanged(GameState newGameState)
+    private void OnGameStateChanged(GameState newGameState)
     {
         enabled = newGameState == GameState.Gameplay;
 
@@ -237,9 +285,9 @@ public class Conductor : MonoBehaviour
             else {
                 AudioListener.pause = true;
             }
-    } */
-
-    public void pauseAudio() {
-        _audioSource.Pause();
     }
+
+/*     public void pauseAudio() {
+        _audioSource.Pause();
+    } */
 }
