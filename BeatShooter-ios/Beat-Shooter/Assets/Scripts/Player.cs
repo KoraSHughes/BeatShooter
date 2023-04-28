@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     public static int health = 3;  // number of hits player can take
 
     public GameObject shield;
+    float timeToShield = 0.0f;
+    private float shieldDuration = 5.0f;
+    private float shieldInc = 15.0f;
 
     void Start()
     {
@@ -45,22 +48,34 @@ public class Player : MonoBehaviour
 
         // width = (float)Screen.width / 2.0f;
         // height = (float)Screen.height / 2.0f;
-        shield.SetActive(false);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "4) Song2") {
-            shield.SetActive(true);
-        }
+        // if (SceneManager.GetActiveScene().name == "4) Song2") {
+        //     shield.SetActive(true);
+        // }
         print(health);
+
         if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;
         }
         else{
             timeToShoot = 0;
+        }
+        if (timeToShield > 0){
+            timeToShield -= Time.deltaTime;
+            if (timeToShield > shieldInc){
+                shield.GetComponent<shield>().invis(false);
+            }
+            else{
+                shield.GetComponent<shield>().invis(true);
+            }
+        }
+        else{
+            timeToShield = 0;
+            shield.GetComponent<shield>().invis(true);
         }
         
 
@@ -128,16 +143,22 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
-                        shield.GetComponent<SpriteRenderer>().color = color2;
+                        shield.GetComponent<shield>().update_type(gunType);
                         _gameManager.HealthUIColor("red");
                         
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
-                        shield.GetComponent<SpriteRenderer>().color = color1;
+                        shield.GetComponent<shield>().update_type(gunType);
                         _gameManager.HealthUIColor("blue");
                     }
+                }
+            }
+            else if (i == 1 && touch.phase == TouchPhase.Began){
+                // do a block/shield
+                if (timeToShield == 0){
+                    timeToShield += shieldInc + shieldDuration;
                 }
             }
         }
