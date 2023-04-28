@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,11 +20,16 @@ public class Enemy : MonoBehaviour
     public int track; //0 = w; 1 = a; 2 = s; 3 = d
     public float beat;
     public bool isHit;
+    public Slider healthBar;
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
+
+    void Update() {
+        healthBar.value = health;
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -33,13 +39,13 @@ public class Enemy : MonoBehaviour
             isHit = true;
             if (health <= 0){
                 Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
-                Destroy(other.gameObject);
                 Destroy(gameObject);
                 _gameManager.AddScore(10);
             }
             else{
                 Instantiate(smallexplo, transform.position, Quaternion.identity);
             }
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("Player")){
             bool isAlive = other.GetComponent<Player>().damage(1);

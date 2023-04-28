@@ -27,6 +27,7 @@ TagManager:
   - Heart3Border
   - Heart1Border
   - Game Over Score Text
+  - enemy3
   layers:
   - Default
   - TransparentFX

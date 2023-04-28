@@ -238,4 +238,8 @@ public class Conductor : MonoBehaviour
                 AudioListener.pause = true;
             }
     } */
+
+    public void pauseAudio() {
+        _audioSource.Pause();
+    }
 }
