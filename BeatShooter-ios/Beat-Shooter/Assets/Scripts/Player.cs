@@ -23,9 +23,9 @@ public class Player : MonoBehaviour
     private float defaultAng = -1;
     Camera cam;
 
-    private float width;
-    private float height;
-    float touch_threshold = 0.2f;
+    private float width = 11.1f;
+    private float height = 6.65f;
+    float touch_threshold = 0.15f;
 
     public static int health = 3;  // number of hits player can take
 
@@ -39,8 +39,8 @@ public class Player : MonoBehaviour
 
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
-        width = (float)Screen.width / 2.0f;
-        height = (float)Screen.height / 2.0f;
+        // width = (float)Screen.width / 2.0f;
+        // height = (float)Screen.height / 2.0f;
     }
 
     // Update is called once per frame
@@ -134,8 +134,9 @@ public class Player : MonoBehaviour
 
     int get_reigon(Vector2 touchPos){
         // returns screen reigon {left: 1, right: 2, up: 3, down: 4} & 0 is not far enough
-        Debug.Log("Comparing:" + touchPos.ToString() + " vs. " + (width*touch_threshold, height*touch_threshold).ToString());
-        if (Mathf.Abs(touchPos.x) < width*touch_threshold ||
+        Debug.Log("Comparing:" + (Mathf.Abs(touchPos.x),Mathf.Abs(touchPos.y)).ToString() +
+                  " vs. " + (width*touch_threshold, height*touch_threshold).ToString());
+        if (Mathf.Abs(touchPos.x) < width*touch_threshold &&
             Mathf.Abs(touchPos.y) < height*touch_threshold) {
                 return 0;
         }
