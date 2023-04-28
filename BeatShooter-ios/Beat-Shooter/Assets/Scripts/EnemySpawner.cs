@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public float[] eSpeed = {200f, 200f, 100f, 100f};
+    public float[] eSpeed = {240f, 240f, 80f, 80f};
 
     public GameObject top;
     public GameObject bottom;
