@@ -16,14 +16,16 @@ public class GameManager : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject gameOverMenu;
     public GameObject songSelectMenu;
-    private GameObject heart1;
-    private GameObject heart2;
-    private GameObject heart3;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
     // private GameObject heart1border;
     // private GameObject heart2border;
     // private GameObject heart3border;    
     public TextMeshProUGUI scoreUI;
+    public GameObject scoreGameObject;
     public TextMeshProUGUI titleUI;
+    public TextMeshProUGUI gameOverScoreText;
 
     private Image heart1image;
     private Image heart2image;
@@ -39,9 +41,9 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        heart1 = GameObject.FindGameObjectWithTag("Heart1");
-        heart2 = GameObject.FindGameObjectWithTag("Heart2");
-        heart3 = GameObject.FindGameObjectWithTag("Heart3");
+        // heart1 = GameObject.FindGameObjectWithTag("Heart1");
+        // heart2 = GameObject.FindGameObjectWithTag("Heart2");
+        // heart3 = GameObject.FindGameObjectWithTag("Heart3");
         
         heart1image = heart1.GetComponent<Image>();
         heart2image = heart2.GetComponent<Image>();
@@ -60,6 +62,8 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(false);
         HealthUI(false);
+        scoreGameObject.SetActive(false);
+        
     }
 
     public void Update(){
@@ -92,6 +96,7 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(true);
         HealthUI(false);
+        scoreGameObject.SetActive(false);
     }
 
     public void MainMenu() {
@@ -105,7 +110,9 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         songSelectMenu.SetActive(false);
         HealthUI(false);
+        scoreGameObject.SetActive(false);
         Time.timeScale = 1f;
+        AddScore(-score);
     }
 
     public void PlaySongOne() {
@@ -144,20 +151,23 @@ public class GameManager : MonoBehaviour
         // IO(false, "settingsButton");
         HealthUI(true);
         HealthUIColor("red");
+        Player.health = 3;
+        scoreGameObject.SetActive(true);
     }
 
     private void Start(){
-        scoreUI.text = "Score: " + score;
+        scoreUI.text = "Score:" + score;
     }
 
     public void AddScore(int points){
         score += points;
-        scoreUI.text = "Score: " + score;
+        scoreUI.text = "Score:" + score;
     }
 
     public void GameOver(){
         // titleUI.text = "GAME OVER!!";
         gameOverMenu.SetActive(true);
+        gameOverScoreText.text = "Score:" + score;
         Time.timeScale = 0f;
     }
 
@@ -188,10 +198,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene.name);
         pauseMenu.SetActive(false);
         gameOverMenu.SetActive(false);
+        HealthUI(true);
         Time.timeScale = 1f;
+        Player.health = 3;
+        AddScore(-score);
     }
 
     public void HealthUI(bool io) {
+        print("healthui");
         heart1.SetActive(io);
         heart2.SetActive(io);
         heart3.SetActive(io);

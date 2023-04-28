@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
                 Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+                _gameManager.AddScore(10);
             }
             else{
                 Instantiate(smallexplo, transform.position, Quaternion.identity);

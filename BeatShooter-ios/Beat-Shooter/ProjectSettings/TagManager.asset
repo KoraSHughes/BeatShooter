@@ -22,9 +22,11 @@ TagManager:
   - Heart1
   - Heart2
   - Heart3
-  - Heart1Border
+  - ScoreUI
   - Heart2Border
   - Heart3Border
+  - Heart1Border
+  - Game Over Score Text
   layers:
   - Default
   - TransparentFX
