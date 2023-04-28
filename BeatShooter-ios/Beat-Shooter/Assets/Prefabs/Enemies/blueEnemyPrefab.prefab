@@ -333,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 4533976259274264410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4785764929233843271}
@@ -356,13 +356,15 @@ MonoBehaviour:
   type: 1
   explo1: {fileID: 3347036263119039397, guid: 38fd024b58b8c42b3b887384fc1d036a, type: 3}
   explo2: {fileID: 3347036263119039397, guid: fb47207097c0c4602967cbe58c7229ec, type: 3}
+  shield: {fileID: 4094436187280785526}
   smallexplo: {fileID: 3347036263119039397, guid: 3e337e32ff76546d8a78cc251f6ca532, type: 3}
   bigexplo: {fileID: 3347036263119039397, guid: cdc024c55c2624c04bb911c59fa0d5c7, type: 3}
-  health: 2
   track: 0
   beat: 0
   isHit: 0
   healthBar: {fileID: 2767720458143588340}
+  maxHealth: 2
+  minHealth: 1
 --- !u!212 &4533976259274264408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -599,6 +601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
+--- !u!1 &4094436187280785526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4873763410400611455, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
+  m_PrefabInstance: {fileID: 8894972082465131529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4785764929233843271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4114946610421086286, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}

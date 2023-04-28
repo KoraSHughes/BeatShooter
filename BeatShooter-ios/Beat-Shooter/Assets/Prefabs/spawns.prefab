@@ -176,5 +176,9 @@ MonoBehaviour:
   bottom: {fileID: 9053421255502091312}
   left: {fileID: 9053421255737997814}
   right: {fileID: 9053421255535058951}
-  enemy1: {fileID: 4533976259274264410, guid: f10c71ffb501a4bccb725d4bb32104d1, type: 3}
-  enemy2: {fileID: 4533976259274264410, guid: fbd7fc600713342a5953e8081dcb5dd5, type: 3}
+  enemies:
+  - {fileID: 4533976259274264410, guid: fbd7fc600713342a5953e8081dcb5dd5, type: 3}
+  - {fileID: 4533976259274264410, guid: f10c71ffb501a4bccb725d4bb32104d1, type: 3}
+  - {fileID: 3458985344226990005, guid: d3ac03019245c96439986a8207b5552e, type: 3}
+  - {fileID: 7425933824222807524, guid: 79cee8a4c58ab31409f9a159bf0bc90b, type: 3}
+  map: {fileID: 0}

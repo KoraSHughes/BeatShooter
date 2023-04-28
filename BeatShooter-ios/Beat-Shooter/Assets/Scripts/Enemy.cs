@@ -10,32 +10,38 @@ public class Enemy : MonoBehaviour
     public bool type = true;
     public GameObject explo1;
     public GameObject explo2;
-    GameObject shield;
+    public GameObject shield;
     public GameObject smallexplo;
     public GameObject bigexplo;
     GameManager _gameManager;
 
     // int eVal = 5;
     // GameManager _gameManager;
-    public int health = 1;
+    int health = 1;
     public int track; //0 = w; 1 = a; 2 = s; 3 = d
     public float beat;
     public bool isHit;
     public Slider healthBar;
+
+    public int maxHealth = 2;
+    public int minHealth = 1;
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         shield.GetComponent<shield>().update_type(type);
-    }
 
-    void Update() {
-        healthBar.value = health;
+        health = Random.Range(minHealth, maxHealth+1);
+        healthBar.maxValue = health;
         if (health <= 1){
             // shield.SetActive(false);
             shield.GetComponent<shield>().invis(true);
         }
+    }
+
+    void Update() {
+        healthBar.value = health;
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -50,21 +56,25 @@ public class Enemy : MonoBehaviour
             }
             else{
                 Instantiate(smallexplo, transform.position, Quaternion.identity);
+                if (health == 1){
+                    shield.GetComponent<shield>().invis(true);
+                }
             }
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Player")){
-            bool isAlive = other.GetComponent<Player>().damage(1);
-            if (isAlive){
-                 Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
-                 Destroy(gameObject);
-            } 
-            else{
-                Instantiate(bigexplo, other.transform.position, Quaternion.identity);
-                Destroy(other.gameObject);
-                _gameManager.GameOver();
+            if (other.GetComponent<Player>().isShielded() == false){
+                bool isAlive = other.GetComponent<Player>().damage(1);
+                if (isAlive){
+                    Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                } 
+                else{
+                    Instantiate(bigexplo, other.transform.position, Quaternion.identity);
+                    Destroy(other.gameObject);
+                    _gameManager.GameOver();
+                }
             }
-            
         }
         // else if (other.CompareTag("shield")){ 
         //     health = 0;

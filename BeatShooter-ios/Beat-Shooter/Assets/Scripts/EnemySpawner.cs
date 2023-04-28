@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private float eSpeed = 200f;
+    public float[] eSpeed = {200f, 200f, 100f, 100f};
 
     public GameObject top;
     public GameObject bottom;
     public GameObject left;
     public GameObject right;
 
-    public GameObject enemy1;
-    public GameObject enemy2;
+    public GameObject[] enemies;
 
     float mytime = 0;
 
@@ -56,18 +55,11 @@ public class EnemySpawner : MonoBehaviour
                 // skip
             }
             else{
-                bool eType = true;
-                switch (enemyType[i]) {
-                    case 'a':
-                        eType = true;
-                        break;
-                    case 'b':
-                        eType = false;
-                        break;
-                    default:
-                        Debug.Log("Error on reading level enemy type: " + enemyType[i]);
-                        break;
+                int eType = enemyType[i] - '0';  // int.Parse(enemyType[i]);
+                if (eType < 0 || eType >= enemies.Length){
+                    Debug.LogError("ENEMY TYPE INCORRECT: " + eType.ToString());
                 }
+
                 if (level[i] == 'w'){
                     spawnTop(eType);
                 }
@@ -92,68 +84,37 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void spawnLeft(bool etype){
-        GameObject enemy = enemy2;
-        if (etype){
-            enemy = enemy1;
-        }
-        GameObject newEnemy = Instantiate(enemy, left.transform.position, Quaternion.identity);
+    private void spawnLeft(int etype){
+        GameObject newEnemy = Instantiate(enemies[etype], left.transform.position, Quaternion.identity);
         // rotate to face right
         newEnemy.transform.localRotation = Quaternion.Euler(0, 0, -90);
-        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(eSpeed, 0));
+        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(eSpeed[etype], 0));
     }
-    private void spawnRight(bool etype){
-        GameObject enemy = enemy2;
-        if (etype){
-            enemy = enemy1;
-        }
-        GameObject newEnemy = Instantiate(enemy, right.transform.position, Quaternion.identity);
+    private void spawnRight(int etype){
+        GameObject newEnemy = Instantiate(enemies[etype], right.transform.position, Quaternion.identity);
         // rotate to face left
         newEnemy.transform.localRotation = Quaternion.Euler(0, 0, 90);
-        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(-eSpeed, 0));
+        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(-eSpeed[etype], 0));
     }
-    private void spawnTop(bool etype){
-        GameObject enemy = enemy2;
-        if (etype){
-            enemy = enemy1;
-        }
-        GameObject newEnemy = Instantiate(enemy, top.transform.position, Quaternion.identity);
+    private void spawnTop(int etype){
+        GameObject newEnemy = Instantiate(enemies[etype], top.transform.position, Quaternion.identity);
         // rotate to face down
         newEnemy.transform.localRotation = Quaternion.Euler(0, 0, 180);
-        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -eSpeed/2));
+        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -eSpeed[etype]/2.2f));
     }
-    private void spawnBottom(bool etype){
-        GameObject enemy = enemy2;
-        if (etype){
-            enemy = enemy1;
-        }
-        GameObject newEnemy = Instantiate(enemy, bottom.transform.position, Quaternion.identity);
-        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, eSpeed/2));
+    private void spawnBottom(int etype){
+        GameObject newEnemy = Instantiate(enemies[etype], bottom.transform.position, Quaternion.identity);
+        newEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, eSpeed[etype]/2.2f));
     }
 
 
-    private bool randBool(){
-        return Random.value >= 0.5f;
+    private int randType(){
+        return Random.Range(0, enemies.Length);
     }
+    string directions = "wasd";
     private string randomLetter(){
-        bool a = randBool();
-        bool b = randBool();
-        if (a) {
-            if (b){
-                return "w";
-            }
-            else{
-                return "a";
-            }
-        }
-        else{
-            if (b){
-                return "s";
-            }
-            else{
-                return "d";
-            }
-        }
+        int num = Random.Range(0,directions.Length);
+        return directions[num]+"";
     }
     private string randomPause(int num){
         string retstring = " ";
@@ -214,7 +175,7 @@ public class EnemySpawner : MonoBehaviour
                 outTypes += ".";
             }
             else{
-                outTypes += (randBool()) ? 'a':'b';
+                outTypes += randType();
             }
         }
         return outTypes;

@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
     private float defaultAng = -1;
     Camera cam;
 
-    private float width = 11.1f;
-    private float height = 6.65f;
+    private float width = 11.1f; // 9.3
+    private float height = 6.65f;  // 5
     float touch_threshold = 0.15f;
 
     public static int health = 3;  // number of hits player can take
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         }
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
-            if (timeToShield > shieldInc){
+            if (timeToShield >= shieldInc){
                 shield.GetComponent<shield>().invis(false);
             }
             else{
@@ -194,5 +194,9 @@ public class Player : MonoBehaviour
     public bool damage(int new_damage){
         health -= new_damage;
         return health > 0;
+    }
+
+    public bool isShielded(){
+        return timeToShield >= shieldInc;
     }
 }
