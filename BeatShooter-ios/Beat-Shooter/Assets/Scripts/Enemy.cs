@@ -16,7 +16,9 @@ public class Enemy : MonoBehaviour
     // int eVal = 5;
     // GameManager _gameManager;
     public int health = 1;
-
+    public int track; //0 = w; 1 = a; 2 = s; 3 = d
+    public float beat;
+    public bool isHit;
 
     void Start()
     {
@@ -24,12 +26,11 @@ public class Enemy : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-
-
     private void OnTriggerEnter2D(Collider2D other){
         if ( (other.CompareTag("bullet1") && type == true) || (other.CompareTag("bullet2") && type == false) ) {
             // _gameManager.AddScore(eVal);
             health -= 1;
+            isHit = true;
             if (health <= 0){
                 Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
