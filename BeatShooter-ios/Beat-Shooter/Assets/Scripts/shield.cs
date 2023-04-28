@@ -23,7 +23,7 @@ public class shield : MonoBehaviour
     //         // _gameManager.AddScore(10);
     //     }
     // }
-    public destroy_shield(){
+    public void destroy_shield(){
         Destroy(gameObject);
     }
 }
