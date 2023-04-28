@@ -220,7 +220,22 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private float beatDiv = 16.0f;  // 16th notes
-    private void mapToLevel(){
+    private void mapToLevel() {
+        Debug.Log("*reading map file...");
+        string fs = map.txt;
+        string[] maplines = fs.Split('\n');
+
+        level = "";
+        for(size_t i = 0; i < maplines.length; ++i) {
+            level += maplines[i];
+        }
+        
+        Debug.Log("...map finished parsing");
+        level = outNotes;  // write to globals
+        enemyType = outEtypes;
+    }
+
+/*     private void mapToLevel(){
         Debug.Log("*reading map file...");
         string outNotes = "";
         string outEtypes = "";
@@ -281,10 +296,9 @@ public class EnemySpawner : MonoBehaviour
                 Debug.Log("Actual note not readable?: " + noteInfo[0]);
                 // outNotes += '.';
             }
-            
         }
         Debug.Log("...map finished parsing");
         level = outNotes;  // write to globals
         enemyType = outEtypes;
-    }
+    } */
 }
