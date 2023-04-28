@@ -39,6 +39,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else{
             mapToLevel();
+            enemyType = randomEtypes();  //change if we dont want random colors
         }
 
         if (level.Length != enemyType.Length){  // double check
