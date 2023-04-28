@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour
 
     public static int health = 3;  // number of hits player can take
 
+    public GameObject shield;
+
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -41,11 +45,16 @@ public class Player : MonoBehaviour
 
         // width = (float)Screen.width / 2.0f;
         // height = (float)Screen.height / 2.0f;
+        shield.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "4) Song2") {
+            shield.SetActive(true);
+        }
         print(health);
         if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;
@@ -119,12 +128,14 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
+                        shield.GetComponent<SpriteRenderer>().color = color2;
                         _gameManager.HealthUIColor("red");
                         
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
+                        shield.GetComponent<SpriteRenderer>().color = color1;
                         _gameManager.HealthUIColor("blue");
                     }
                 }
