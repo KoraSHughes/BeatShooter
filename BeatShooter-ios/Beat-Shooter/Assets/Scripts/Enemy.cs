@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public bool type = true;
     public GameObject explo1;
     public GameObject explo2;
+    GameObject shield;
     public GameObject smallexplo;
     public GameObject bigexplo;
     GameManager _gameManager;
@@ -26,10 +27,15 @@ public class Enemy : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
+        shield.GetComponent<shield>().update_type(type);
     }
 
     void Update() {
         healthBar.value = health;
+        if (health <= 1){
+            // shield.SetActive(false);
+            shield.GetComponent<shield>().invis(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -50,7 +56,8 @@ public class Enemy : MonoBehaviour
         else if (other.CompareTag("Player")){
             bool isAlive = other.GetComponent<Player>().damage(1);
             if (isAlive){
-                 Instantiate(smallexplo, other.transform.position, Quaternion.identity);
+                 Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
+                 Destroy(gameObject);
             } 
             else{
                 Instantiate(bigexplo, other.transform.position, Quaternion.identity);
