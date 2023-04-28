@@ -362,7 +362,7 @@ MonoBehaviour:
   track: 0
   beat: 0
   isHit: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2767720458143588340}
 --- !u!212 &4533976259274264408
 SpriteRenderer:
   m_ObjectHideFlags: 0
