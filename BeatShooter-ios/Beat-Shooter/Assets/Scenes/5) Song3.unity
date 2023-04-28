@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shield
       objectReference: {fileID: 0}
+    - target: {fileID: 4873763410400611455, guid: 14a929f5cab68fc43b1be7b216129793, type: 3}
+      propertyPath: m_TagString
+      value: shield
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a929f5cab68fc43b1be7b216129793, type: 3}
 --- !u!1 &249329512

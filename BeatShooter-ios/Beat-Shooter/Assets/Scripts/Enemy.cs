@@ -59,5 +59,11 @@ public class Enemy : MonoBehaviour
             }
             
         }
+        else if (other.CompareTag("shield")){ 
+            health = 0;
+            Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            _gameManager.AddScore(10);
+        }
     }
 }
