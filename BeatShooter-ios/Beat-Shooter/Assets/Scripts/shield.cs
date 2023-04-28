@@ -21,7 +21,7 @@ public class shield : MonoBehaviour
         
     }
     void update_color(){
-        transform.GetComponent<SpriteRenderer>().color = type ? blueColor : redColor;
+        transform.GetComponent<SpriteRenderer>().material.color = type ? blueColor : redColor;
     }
 
     public void update_type(bool newType){
@@ -31,7 +31,7 @@ public class shield : MonoBehaviour
 
     public void invis(bool isInvis){
         if (isInvis){
-            transform.GetComponent<SpriteRenderer>().color = notSeen;
+            transform.GetComponent<SpriteRenderer>().material.color = notSeen;
         }
         else{
             update_color();
