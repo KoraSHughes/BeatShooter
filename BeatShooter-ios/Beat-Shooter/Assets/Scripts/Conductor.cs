@@ -22,7 +22,7 @@ public class Conductor : MonoBehaviour
     public AudioSource _audioSource;
 
     public List<Vector2> notes; //y is beat, x is position
-    public List<Vector3> otherNoteInfo;
+    public List<Vector2> otherNoteInfo;
     public int nextIndex;
     public float beatsSpawned;
     public float songPlayOffset;
@@ -34,14 +34,8 @@ public class Conductor : MonoBehaviour
     //public MusicNote notePrefab;
     //public MusicNote hazardPrefab;
     
-    public GameObject top;
-    public GameObject bottom;
-    public GameObject left;
-    public GameObject right;
-
-    public Enemy enemy1;
-    public Enemy enemy2;
-
+    public GameObject top, bottom, left, right;
+    public Enemy enemy1A, enemy1B, enemy2A, enemy2B;
     private float eSpeed = 200f;
 
     public TextAsset map;
@@ -54,7 +48,7 @@ public class Conductor : MonoBehaviour
     public float enemyKillWindow = 0.06f;
     bool done;
     public int combo, score, targetScore;
-    int scoreAmnt = 100;
+    int scoreAmnt = 100;    
     float endTimer = 0.5f;
     float endMarker;
     //float hzMod = 1; // modifier for hitting hazards
@@ -80,12 +74,12 @@ public class Conductor : MonoBehaviour
 
     void Start() {
         _audioSource = GetComponent<AudioSource>();
-        secPerBeat = 60f / songBpm;
 
         dspSongTime = (float)AudioSettings.dspTime;
         spawnedEnemies = new List<Enemy>();
         Invoke("StartMusic", songPlayOffset);
         GenerateNotes();
+        secPerBeat = 60f / songBpm;
         nextIndex = 0;
         spawnedEnemiesInd = 0;
         score = 0;
@@ -100,32 +94,41 @@ public class Conductor : MonoBehaviour
         // SPAAAAAAAAAAAAAWN NOTES
         if(nextIndex < notes.Count && notes[nextIndex].y < songPosInBeats + beatsSpawned){
             //print(spawnpoint.position + " " + Quaternion.identity);
-            Enemy _enemy = enemy1;
+            Enemy _enemy = enemy1A;
             Transform pos = top.transform;
+            int startPos = pos.transform.y;
             Vector2 force = new Vector2(0,0);
             
-            if(otherNoteInfo[nextIndex][1] == 1)
-                _enemy = enemy2;
+            if((otherNoteInfo[nextIndex].x == 0) && (otherNoteInfo[nextIndex].y == 1))
+                _enemy = enemy1B;
+            else if((otherNoteInfo[nextIndex].x == 1) && (otherNoteInfo[nextIndex].y == 0))
+                _enemy = enemy2A;
+            else if((otherNoteInfo[nextIndex].x == 1) && (otherNoteInfo[nextIndex].y == 1))
+                _enemy = enemy2B;
 
-            if(Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 0) {
+/*             if(notes[nextIndex].x == 0) {
                 pos = top.transform;
-                force = new Vector2(0, -eSpeed/2);
-            }
-            else if(Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 1) {
+                //force = new Vector2(0, -eSpeed/2);
+            } */
+            if(notes[nextIndex].x == 1) {
                 pos = left.transform;
-                force = new Vector2(eSpeed, 0);
+                startPos = pos.transform.x;
+                //force = new Vector2(eSpeed, 0);
             }
-            else if(Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 2) {
+            else if(notes[nextIndex].x == 2) {
                 pos = bottom.transform;
-                force = new Vector2(0, eSpeed/2);
+                startPos = pos.transform.y;
+                //force = new Vector2(0, eSpeed/2);
             }
-            else if(Mathf.RoundToInt(otherNoteInfo[nextIndex].x) == 3) {
+            else if(notes[nextIndex].x == 3) {
                 pos = right.transform;
-                force = new Vector2(-eSpeed, 0);
+                startPos = pos.transform.x;
+                //force = new Vector2(-eSpeed, 0);
             }
 
             Enemy newEnemy = Instantiate(_enemy, pos.position, Quaternion.identity);
-            newEnemy.GetComponent<Rigidbody2D>().AddForce(force);
+            //newEnemy.GetComponent<Rigidbody2D>().AddForce(force);
+            newEnemy.Initialize(startPos, 0, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x);
             spawnedEnemies.Add(_enemy);
             nextIndex++;
         }
@@ -154,7 +157,7 @@ public class Conductor : MonoBehaviour
 
     void GenerateNotes(){
         notes = new List<Vector2>();
-        otherNoteInfo = new List<Vector3>();
+        otherNoteInfo = new List<Vector2>();
         string fs = map.text;
         string[] maplines = fs.Split('\n');
         var metadata = maplines[0].Split(' ');
@@ -171,20 +174,20 @@ public class Conductor : MonoBehaviour
             if (nn[0].Contains("/") || nn.Length==1)
                 continue;
             float lane = float.Parse(nn[0]); //0 = w; 1 = a; 2 = s; 3 = d
-            float ty = float.Parse(nn[2]) + offset;
+            float ty = float.Parse(nn[3]) + offset;
             //print(tx + " " + ty);
             notes.Add(new Vector2(lane, ty));
             
             //additional info (TYPEVAL: 1 = color a, 2 = color b)
             int color = 0;
             int type = 0;
-            if (nn[1] == "COLORA") {
-                color = 0;
-            }else if (nn[1] == "COLORB") {
-                color = 1;
-            }
+            if (nn[1] == "FALSE") type = 0;
+            else if (nn[1] == "TRUE") type = 1;
 
-            otherNoteInfo.Add(new Vector3(type, color, 0));
+            if (nn[2] == "COLORA") color = 0;
+            else if (nn[2] == "COLORB") color = 1;
+
+            otherNoteInfo.Add(new Vector2(type, color));
         }
     }
 

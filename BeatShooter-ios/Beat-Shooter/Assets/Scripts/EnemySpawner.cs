@@ -30,8 +30,7 @@ public class EnemySpawner : MonoBehaviour
     private float bps = 4;
     int i = 0;  // position in level
 
-    void Start()
-    {
+    void Start() {
         if (map == null){  // no map selected
             level = randomLevel();
             enemyType = randomEtypes();
@@ -45,9 +44,11 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("Level & Enemy Type Definition Incongruent\n"+level+"\n"+enemyType);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {  // run map
+
+    void Update() {  // run map
+        secPerBeat = 60f / songBpm;
+        dspSongTime = (float)AudioSettings.dspTime;
+        
         mytime += Time.deltaTime;
 
         if (i < level.Length && mytime >= (1/bps)){

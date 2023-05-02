@@ -18,13 +18,17 @@ public class Enemy : MonoBehaviour
     // int eVal = 5;
     // GameManager _gameManager;
     int health = 1;
+    public int maxHealth = 2;
+    public int minHealth = 1;
+
+    public float startPos, endPos;
     public int track; //0 = w; 1 = a; 2 = s; 3 = d
     public float beat;
     public bool isHit;
-    public Slider healthBar;
+    public int type;
 
-    public int maxHealth = 2;
-    public int minHealth = 1;
+    public Conductor c;
+    //public Slider healthBar;
 
     void Start()
     {
@@ -33,7 +37,7 @@ public class Enemy : MonoBehaviour
         shield.GetComponent<shield>().update_type(type);
 
         health = Random.Range(minHealth, maxHealth+1);
-        healthBar.maxValue = health;
+        //healthBar.maxValue = health;
         if (health <= 1){
             // shield.SetActive(false);
             shield.GetComponent<shield>().invis(true);
@@ -41,7 +45,42 @@ public class Enemy : MonoBehaviour
     }
 
     void Update() {
-        healthBar.value = health;
+        //healthBar.value = health;
+        updatePos();
+    }
+
+    public void Initialize(float startPos, float endPos, float beat, int track, int type){
+        this.startPos = startPos;
+        this.endPos = endPos;
+        this.beat = beat;
+        this.track = track;
+        this.type = type;
+        wasTriggered = false;
+        
+        _conductor = GameObject.Find("Conductor").GetComponent<Conductor>();
+    }
+
+    private void updatePos() {
+        if ((track == 0) || (track == 2)) { //top & bottom
+            transform.position = new Vector3(transform.position.x,
+                                            startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            transform.position.z;)
+        }
+        else if ((track == 1) || (track == 3)) { //left & right
+            transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            transform.position.y,
+                                            transform.position.z;)
+        }
+/*         else if (track == 2) { //bottom
+            transform.position = new Vector3(transform.position.x,
+                                            startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            transform.position.z;)
+        }
+        else if (track == 3) { //right
+            transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            transform.position.y,
+                                            transform.position.z;)
+        } */
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -68,7 +107,7 @@ public class Enemy : MonoBehaviour
                 if (isAlive){
                     Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
                     Destroy(gameObject);
-                } 
+                }
                 else{
                     Instantiate(bigexplo, other.transform.position, Quaternion.identity);
                     Destroy(other.gameObject);
