@@ -8,18 +8,17 @@ public class InputManager : MonoBehaviour
 {
     public KeyCode[] left, up, down, right;
     string direction; //l: 0, u: 1, d: 2, r: 3
-    enum NoteType{COLORA, COLORB}; //doing a bit 
+    enum NoteType{COLORA, COLORB, FALSE, TRUE}; //doing a bit 
     //public List<Vector2> notes; //y is beat, x is position
     List<string> mapLst;
-    int lastPos;
-    int escCount;
+    int lastPos, escCount, type;
     float held0start, held1start, held2start, held3start;
     float holdCheck = 0.5f;
 
     private void pressDownHelper(int color) {
         //if (Input.GetKey(KeyCode.Space)) {
             print("Pressed!\n");
-            mapLst.Add(direction + " " + (color == 0 ? NoteType.COLORA : NoteType.COLORB) + " " + Conductor.songPosInBeats + "\n");
+            mapLst.Add(direction + " " + (type == 0 ? NoteType.FALSE: NoteType.TRUE) + (color == 0 ? NoteType.COLORA : NoteType.COLORB) + " " + Conductor.songPosInBeats + "\n");
         //}
 /*         else {
             if (held1start == -1) {
@@ -28,20 +27,21 @@ public class InputManager : MonoBehaviour
         } */
     }
 
-    private void holdHelper(float heldstart) {
+/*     private void holdHelper(float heldstart) {
         if (Mathf.Abs(Conductor.songPosInBeats - heldstart) > holdCheck) {
             mapLst.Add(direction + " " + heldstart + " " + Conductor.songPosInBeats + "\n"); //+ NoteType.HELD
         }
         else {
             mapLst.Add(direction + " " + heldstart + "\n"); //+ NoteType.SINGLE
         }
-    }
+    } */
 
     private void Start() {
         escCount = 0;
         lastPos = 0;
-        held1start = -1;
-        held2start = -1;
+        type = 0;
+        // held1start = -1;
+        // held2start = -1;
         mapLst = new List<string>();
     }
 
@@ -53,6 +53,9 @@ public class InputManager : MonoBehaviour
             lastPos = pos;
             mapLst.Add("/*" + Conductor.songPos + " current pos*/\n");
         }
+
+        if (Input.GetKey(KeyCode.Space)) 
+            type = 1;
 
         //left press down check
         if (Input.GetKeyDown(left[0])) {

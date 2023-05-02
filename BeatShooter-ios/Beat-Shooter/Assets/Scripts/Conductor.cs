@@ -178,9 +178,9 @@ public class Conductor : MonoBehaviour
             //print(tx + " " + ty);
             notes.Add(new Vector2(lane, ty));
             
-            //additional info (TYPEVAL: 1 = color a, 2 = color b)
-            int color = 0;
-            int type = 0;
+            //additional info
+            int type = 0; // 0 = small, 1 = large
+            int color = 0; // 0 = color a, 1 = color b
             if (nn[1] == "FALSE") type = 0;
             else if (nn[1] == "TRUE") type = 1;
 
