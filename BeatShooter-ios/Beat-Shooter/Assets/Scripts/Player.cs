@@ -31,10 +31,10 @@ public class Player : MonoBehaviour
 
     public static int health = 3;  // number of hits player can take
 
-    public GameObject shield;
+    public GameObject Shield;
     float timeToShield = 0.0f;
-    private float shieldDuration = 5.0f;
-    private float shieldInc = 15.0f;
+    private float ShieldDuration = 5.0f;
+    private float ShieldInc = 15.0f;
 
     void Start()
     {
@@ -54,9 +54,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         // if (SceneManager.GetActiveScene().name == "4) Song2") {
-        //     shield.SetActive(true);
+        //     Shield.SetActive(true);
         // }
-        print(health);
+        //print(health);
 
         if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;
@@ -66,16 +66,16 @@ public class Player : MonoBehaviour
         }
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
-            if (timeToShield >= shieldInc){
-                shield.GetComponent<shield>().invis(false);
+            if (timeToShield >= ShieldInc){
+                Shield.GetComponent<Shield>().invis(false);
             }
             else{
-                shield.GetComponent<shield>().invis(true);
+                Shield.GetComponent<Shield>().invis(true);
             }
         }
         else{
             timeToShield = 0;
-            shield.GetComponent<shield>().invis(true);
+            Shield.GetComponent<Shield>().invis(true);
         }
         
 
@@ -143,22 +143,22 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
-                        shield.GetComponent<shield>().update_type(gunType);
+                        Shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("red");
                         
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
-                        shield.GetComponent<shield>().update_type(gunType);
+                        Shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("blue");
                     }
                 }
             }
             else if (i == 1 && touch.phase == TouchPhase.Began){
-                // do a block/shield
+                // do a block/Shield
                 if (timeToShield == 0){
-                    timeToShield += shieldInc + shieldDuration;
+                    timeToShield += ShieldInc + ShieldDuration;
                 }
             }
         }
@@ -197,6 +197,6 @@ public class Player : MonoBehaviour
     }
 
     public bool isShielded(){
-        return timeToShield >= shieldInc;
+        return timeToShield >= ShieldInc;
     }
 }

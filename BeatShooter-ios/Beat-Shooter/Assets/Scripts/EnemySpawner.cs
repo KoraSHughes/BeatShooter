@@ -182,7 +182,7 @@ public class EnemySpawner : MonoBehaviour
         return outTypes;
     }
 
-    private float beatDiv = 16.0f;  // 16th notes
+    //private float beatDiv = 16.0f;  // 16th notes
     // private void mapToLevel() {
     //     Debug.Log("*reading map file...");
     //     string fs = map.txt;

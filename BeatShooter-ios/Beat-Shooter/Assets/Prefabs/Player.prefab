@@ -84,7 +84,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 887420968191358241}
   bulletPrefab1: {fileID: 1114680609795115919, guid: e5a4924c5f5c247e6b9ee878c85052a2, type: 3}
   bulletPrefab2: {fileID: 1114680609795115919, guid: 5aa9574d181784213991942c66ba30bf, type: 3}
-  shield: {fileID: 7050580895948458149}
+  Shield: {fileID: 7050580895948458149}
 --- !u!212 &887420968945485308
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Transition : MonoBehaviour
 {
-    public Animator animation;
+    public Animator _animation;
     public int level;
     void Start()
     {
@@ -20,7 +20,7 @@ public class Transition : MonoBehaviour
     }
 
     public void FadeTransition(int level) {
-        animation.SetTrigger("fadeOut");
+        _animation.SetTrigger("fadeOut");
     }
 
     public void loadNextScene() {

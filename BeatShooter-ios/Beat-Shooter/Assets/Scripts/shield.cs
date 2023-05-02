@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shield : MonoBehaviour
+public class Shield : MonoBehaviour
 {
     bool type = true;
     Color redColor = new Color(255, 64, 64);

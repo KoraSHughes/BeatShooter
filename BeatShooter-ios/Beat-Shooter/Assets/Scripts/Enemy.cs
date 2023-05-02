@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public bool type = true;
     public GameObject explo1;
     public GameObject explo2;
-    public GameObject shield;
+    public GameObject Shield;
     public GameObject smallexplo;
     public GameObject bigexplo;
     GameManager _gameManager;
@@ -25,22 +25,21 @@ public class Enemy : MonoBehaviour
     public int track; //0 = w; 1 = a; 2 = s; 3 = d
     public float beat;
     public bool isHit;
-    public int type;
 
-    public Conductor c;
+    public Conductor _conductor;
     //public Slider healthBar;
 
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
-        shield.GetComponent<shield>().update_type(type);
+        Shield.GetComponent<Shield>().update_type(type);
 
         health = Random.Range(minHealth, maxHealth+1);
         //healthBar.maxValue = health;
         if (health <= 1){
-            // shield.SetActive(false);
-            shield.GetComponent<shield>().invis(true);
+            // Shield.SetActive(false);
+            Shield.GetComponent<Shield>().invis(true);
         }
     }
 
@@ -49,13 +48,13 @@ public class Enemy : MonoBehaviour
         updatePos();
     }
 
-    public void Initialize(float startPos, float endPos, float beat, int track, int type){
+    public void Initialize(float startPos, float endPos, float beat, float track, float enemType){
         this.startPos = startPos;
         this.endPos = endPos;
         this.beat = beat;
-        this.track = track;
-        this.type = type;
-        wasTriggered = false;
+        this.track = Mathf.RoundToInt(track);
+        this.type = (enemType == 1) ? true : false;
+        //wasTriggered = false;
         
         _conductor = GameObject.Find("Conductor").GetComponent<Conductor>();
     }
@@ -63,23 +62,27 @@ public class Enemy : MonoBehaviour
     private void updatePos() {
         if ((track == 0) || (track == 2)) { //top & bottom
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
-                                            transform.position.z;)
+                                            startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)),
+                                            transform.position.z);
+            print(startPos + " " + endPos);
+            //print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
         }
         else if ((track == 1) || (track == 3)) { //left & right
-            transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+            transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)),
                                             transform.position.y,
-                                            transform.position.z;)
+                                            transform.position.z);
+            print(startPos + " " + endPos);
+            //print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
         }
 /*         else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,
                                             startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
-                                            transform.position.z;)
+                                            transform.position.z);
         }
         else if (track == 3) { //right
             transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.y,
-                                            transform.position.z;)
+                                            transform.position.z);
         } */
     }
 
@@ -96,7 +99,7 @@ public class Enemy : MonoBehaviour
             else{
                 Instantiate(smallexplo, transform.position, Quaternion.identity);
                 if (health == 1){
-                    shield.GetComponent<shield>().invis(true);
+                    Shield.GetComponent<Shield>().invis(true);
                 }
             }
             Destroy(other.gameObject);
@@ -115,7 +118,7 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-        // else if (other.CompareTag("shield")){ 
+        // else if (other.CompareTag("Shield")){ 
         //     health = 0;
         //     Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
         //     Destroy(gameObject);

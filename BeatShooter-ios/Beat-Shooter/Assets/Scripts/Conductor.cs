@@ -36,7 +36,7 @@ public class Conductor : MonoBehaviour
     
     public GameObject top, bottom, left, right;
     public Enemy enemy1A, enemy1B, enemy2A, enemy2B;
-    private float eSpeed = 200f;
+    //private float eSpeed = 200f;
 
     public TextAsset map;
 
@@ -96,7 +96,8 @@ public class Conductor : MonoBehaviour
             //print(spawnpoint.position + " " + Quaternion.identity);
             Enemy _enemy = enemy1A;
             Transform pos = top.transform;
-            int startPos = pos.transform.y;
+            float startPos = pos.position.y;
+            float endPos = playerGO.transform.position.y;
             Vector2 force = new Vector2(0,0);
             
             if((otherNoteInfo[nextIndex].x == 0) && (otherNoteInfo[nextIndex].y == 1))
@@ -112,23 +113,26 @@ public class Conductor : MonoBehaviour
             } */
             if(notes[nextIndex].x == 1) {
                 pos = left.transform;
-                startPos = pos.transform.x;
+                startPos = pos.position.x;
+                endPos = playerGO.transform.position.x;
                 //force = new Vector2(eSpeed, 0);
             }
             else if(notes[nextIndex].x == 2) {
                 pos = bottom.transform;
-                startPos = pos.transform.y;
+                startPos = pos.position.y;
+                endPos = playerGO.transform.position.y;
                 //force = new Vector2(0, eSpeed/2);
             }
             else if(notes[nextIndex].x == 3) {
                 pos = right.transform;
-                startPos = pos.transform.x;
+                startPos = pos.position.x;
+                endPos = playerGO.transform.position.x;
                 //force = new Vector2(-eSpeed, 0);
             }
 
             Enemy newEnemy = Instantiate(_enemy, pos.position, Quaternion.identity);
             //newEnemy.GetComponent<Rigidbody2D>().AddForce(force);
-            newEnemy.Initialize(startPos, 0, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x);
+            newEnemy.Initialize(startPos, endPos, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x);
             spawnedEnemies.Add(_enemy);
             nextIndex++;
         }
