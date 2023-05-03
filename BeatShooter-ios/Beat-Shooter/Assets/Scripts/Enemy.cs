@@ -64,15 +64,17 @@ public class Enemy : MonoBehaviour
             transform.position = new Vector3(transform.position.x,
                                             startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)),
                                             transform.position.z);
-            print(startPos + " " + endPos);
-            //print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
+            print("startPos: " + startPos + " endPos: " + endPos);
+            print("math: " + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)));
+            print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
         }
         else if ((track == 1) || (track == 3)) { //left & right
             transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)),
                                             transform.position.y,
                                             transform.position.z);
-            print(startPos + " " + endPos);
-            //print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
+            print("startPos: " + startPos + " endPos: " + endPos);
+            print("math: " + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)));
+            print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
         }
 /*         else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,

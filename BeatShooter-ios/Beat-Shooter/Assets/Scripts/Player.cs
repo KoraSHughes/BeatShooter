@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     public static int health = 3;  // number of hits player can take
 
-    public GameObject Shield;
+    public GameObject shield;
     float timeToShield = 0.0f;
     private float ShieldDuration = 5.0f;
     private float ShieldInc = 15.0f;
@@ -67,15 +67,15 @@ public class Player : MonoBehaviour
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
             if (timeToShield >= ShieldInc){
-                Shield.GetComponent<Shield>().invis(false);
+                shield.GetComponent<Shield>().invis(false);
             }
             else{
-                Shield.GetComponent<Shield>().invis(true);
+                shield.GetComponent<Shield>().invis(true);
             }
         }
         else{
             timeToShield = 0;
-            Shield.GetComponent<Shield>().invis(true);
+            shield.GetComponent<Shield>().invis(true);
         }
         
 

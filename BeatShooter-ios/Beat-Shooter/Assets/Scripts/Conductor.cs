@@ -84,7 +84,7 @@ public class Conductor : MonoBehaviour
         spawnedEnemiesInd = 0;
         score = 0;
         combo = 0;
-        GameObject.Find("EndScene").GetComponent<Canvas>().enabled = false;
+        //GameObject.Find("EndScene").GetComponent<Canvas>().enabled = false;
     }
     
     void Update() {
