@@ -143,14 +143,14 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
-                        Shield.GetComponent<Shield>().update_type(gunType);
+                        shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("red");
                         
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
-                        Shield.GetComponent<Shield>().update_type(gunType);
+                        shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("blue");
                     }
                 }
