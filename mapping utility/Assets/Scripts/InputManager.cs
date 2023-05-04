@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
     private void pressDownHelper(int color) {
         //if (Input.GetKey(KeyCode.Space)) {
             print("Pressed!\n");
-            mapLst.Add(direction + " " + (type == 0 ? NoteType.SMALL: type == 1 ? NoteType.SHIELD : NoteType.LARGE)
+            mapLst.Add(direction + " " + (type == 0 ? NoteType.SMALL: type == 1 ? NoteType.SHIELD : NoteType.LARGE) + " "
             + (color == 0 ? NoteType.COLORA : NoteType.COLORB) + " " + Conductor.songPosInBeats + "\n");
         //}
 /*         else {

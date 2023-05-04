@@ -35,16 +35,16 @@ public class Enemy : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _shield.GetComponent<Shield>().update_type(color);
 
-        health = Random.Range(minHealth, maxHealth+1);
+        //health = Random.Range(minHealth, maxHealth+1);
         //healthBar.maxValue = health;
-        if (health <= 1){
-            // _shield.SetActive(false);
-            _shield.GetComponent<Shield>().invis(true);
-        }
     }
 
     void Update() {
         //healthBar.value = health;
+        if (health <= 1){
+            // _shield.SetActive(false);
+            _shield.GetComponent<Shield>().invis(true);
+        }
         updatePos();
     }
 

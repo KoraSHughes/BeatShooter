@@ -25,7 +25,6 @@ TagManager:
   - ScoreUI
   - Game Over Score Text
   - enemy3
-  - shield
   - ShieldCooldown
   - Heart2Border
   - Heart3Border
@@ -33,6 +32,8 @@ TagManager:
   - Cooldown
   - ShieldUI
   - Shield Cooldown UI
+  - Undefined
+  - shield
   layers:
   - Default
   - TransparentFX

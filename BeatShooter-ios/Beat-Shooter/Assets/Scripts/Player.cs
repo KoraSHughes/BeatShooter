@@ -63,12 +63,19 @@ public class Player : MonoBehaviour
 
         shieldAppear();
         // do a block/Shield
-        if (timeToShield <= 0){
+/*         if (timeToShield <= 0){
             detectSwipe();
             timeToShield += ShieldInc + ShieldDuration;
+        } */
+        for (int i=0; i < Input.touchCount; ++i){
+            Touch touch = Input.GetTouch(i);
+            if (touch.phase == TouchPhase.Began) {
+
+            }
+            if (touch.phase == TouchPhase.Moved) {
+                
+            }
         }
-        singleTouch();
-        
     }
 
     public void shieldAppear() {
@@ -95,81 +102,79 @@ public class Player : MonoBehaviour
     }
 
     public void singleTouch() {
-        for (int i=0; i < Input.touchCount; ++i){  // track all touches
-            Touch touch = Input.GetTouch(i);
-            Vector2 pos = cam.ScreenToWorldPoint(touch.position); 
-            int touch_region = get_region(pos);
+        print("single touch");
+        Vector2 pos = cam.ScreenToWorldPoint(touch.position); 
+        int touch_region = get_region(pos);
 
-            if (i == 0 && touch.phase == TouchPhase.Began){
-                // Debug.Log("Touches " + Input.touchCount.ToString() + ": " + pos.ToString());
-                // int touch_region = get_region(pos);
-                
-                // rotate user based on region
-                switch (touch_region) {
-                    case 1:
-                        myAngle = 90f;
-                        break;
-                    case 2:
-                        myAngle = -90f;
-                        break;
-                    case 3:
-                        myAngle = 0f;
-                        break;
-                    case 4:
-                        myAngle = 180f;
-                        break;
-                    default:
-                        myAngle = defaultAng;
-                        break;
-                }
-                // shoot
-                if (myAngle != defaultAng){
-                    if (timeToShoot == 0){
-                        // rotate
-                        transform.rotation = Quaternion.Euler(0f,0f,myAngle);
+        if (i == 0 && touch.phase == TouchPhase.Began){
+            // Debug.Log("Touches " + Input.touchCount.ToString() + ": " + pos.ToString());
+            // int touch_region = get_region(pos);
+            // rotate user based on region
+            switch (touch_region) {
+                case 1:
+                    myAngle = 90f;
+                    break;
+                case 2:
+                    myAngle = -90f;
+                    break;
+                case 3:
+                    myAngle = 0f;
+                    break;
+                case 4:
+                    myAngle = 180f;
+                    break;
+                default:
+                    myAngle = defaultAng;
+                    break;
+            }
+            // shoot
+            if (myAngle != defaultAng){
+                if (timeToShoot == 0){
+                    // rotate
+                    transform.rotation = Quaternion.Euler(0f,0f,myAngle);
 
-                        // shoot
-                        GameObject bulletPrefab = bulletPrefab1;
-                        if (!gunType){
-                            bulletPrefab = bulletPrefab2;
-                        }
-
-                        GameObject newBullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-                        if (myAngle == 180){    // facing down
-                            newBullet.transform.localRotation = Quaternion.Euler(0, 0, 180);
-                            newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -bulletSpeed));
-                        }
-                        else if (myAngle == 0){ // facing up
-                            newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bulletSpeed));
-                        }
-                        else if (myAngle == -90){   // facing right
-                            newBullet.transform.localRotation = Quaternion.Euler(0, 0, -90);
-                            newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletSpeed, 0));
-                        }
-                        else{   // facing left
-                            newBullet.transform.localRotation = Quaternion.Euler(0, 0, 90);
-                            newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bulletSpeed, 0));
-                        }
-                        timeToShoot = 0.1f;
+                    // shoot
+                    GameObject bulletPrefab = bulletPrefab1;
+                    if (!gunType){
+                        bulletPrefab = bulletPrefab2;
                     }
+
+                    GameObject newBullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
+                    if (myAngle == 180){    // facing down
+                        newBullet.transform.localRotation = Quaternion.Euler(0, 0, 180);
+                        newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -bulletSpeed));
+                    }
+                    else if (myAngle == 0){ // facing up
+                        newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bulletSpeed));
+                    }
+                    else if (myAngle == -90){   // facing right
+                        newBullet.transform.localRotation = Quaternion.Euler(0, 0, -90);
+                        newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletSpeed, 0));
+                    }
+                    else{   // facing left
+                        newBullet.transform.localRotation = Quaternion.Euler(0, 0, 90);
+                        newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bulletSpeed, 0));
+                    }
+                    timeToShoot = 0.1f;
+                }
+            }
+            else{
+                    // swap guns
+                if (gunType){
+                    gunType = false;
+                    sprite.color = color2;
+                    _shield.GetComponent<Shield>().update_type(gunType);
+                    _gameManager.HealthUIColor("red");
                 }
                 else{
-                     // swap guns
-                    if (gunType){
-                        gunType = false;
-                        sprite.color = color2;
-                        _shield.GetComponent<Shield>().update_type(gunType);
-                        _gameManager.HealthUIColor("red");
-                    }
-                    else{
-                        gunType = true;
-                        sprite.color = color1;
-                        _shield.GetComponent<Shield>().update_type(gunType);
-                        _gameManager.HealthUIColor("blue");
-                    }
+                    gunType = true;
+                    sprite.color = color1;
+                    _shield.GetComponent<Shield>().update_type(gunType);
+                    _gameManager.HealthUIColor("blue");
                 }
             }
         }
+        
     }
 
     public void detectSwipe () {
@@ -190,9 +195,10 @@ public class Player : MonoBehaviour
            
                 // Make sure it was a legit swipe, not a tap
                 if (currentSwipe.magnitude < minSwipeLength) {
+                    //singleTouch();
                     return;
                 }
-           
+                print("swipe: " + Input.touches.Length);
                 currentSwipe.Normalize();
  
                 // Swipe up
@@ -213,8 +219,8 @@ public class Player : MonoBehaviour
 
     int get_region(Vector2 touchPos){
         // returns screen region {left: 1, right: 2, up: 3, down: 4} & 0 is not far enough
-        Debug.Log("Comparing:" + (Mathf.Abs(touchPos.x),Mathf.Abs(touchPos.y)).ToString() +
-                  " vs. " + (width*touch_threshold, height*touch_threshold).ToString());
+        //Debug.Log("Comparing:" + (Mathf.Abs(touchPos.x),Mathf.Abs(touchPos.y)).ToString() +
+                  //" vs. " + (width*touch_threshold, height*touch_threshold).ToString());
         if (Mathf.Abs(touchPos.x) < width*touch_threshold &&
             Mathf.Abs(touchPos.y) < height*touch_threshold) {
                 return 0;
