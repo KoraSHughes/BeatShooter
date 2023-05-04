@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4afc2d9cd71348f498f57896fd79fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  color: 1
   explo1: {fileID: 3347036263119039397, guid: 38fd024b58b8c42b3b887384fc1d036a, type: 3}
   explo2: {fileID: 3347036263119039397, guid: fb47207097c0c4602967cbe58c7229ec, type: 3}
   _shield: {fileID: 4094436187280785526}
@@ -604,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 4873763410400611455, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873763410400611455, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
+      propertyPath: m_TagString
+      value: Undefined
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}

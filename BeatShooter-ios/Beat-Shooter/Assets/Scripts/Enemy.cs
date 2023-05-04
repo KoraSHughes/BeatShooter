@@ -105,19 +105,26 @@ public class Enemy : MonoBehaviour
         }
         else if (other.CompareTag("Player")){
             if (other.GetComponent<Player>().isShielded() == false){
+                print("hit player");
                 bool isAlive = other.GetComponent<Player>().damage(1);
                 if (isAlive){
+                    print("alive");
                     Instantiate((color)?explo1:explo2, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
-                else{
+                else {
+                    print("dead");
                     Instantiate(bigexplo, other.transform.position, Quaternion.identity);
                     Destroy(other.gameObject);
                     _gameManager.GameOver();
                 }
             }
         }
-        else if (health < 0 && other.CompareTag("Shield")){ 
+        else if (other.CompareTag("shield")){
+            print("hit shield");
+            if (health < 0) {
+                _gameManager.AddScore(10);
+            }
             health = 0;
             Instantiate((color)?explo1:explo2, transform.position, Quaternion.identity);
             Destroy(gameObject);

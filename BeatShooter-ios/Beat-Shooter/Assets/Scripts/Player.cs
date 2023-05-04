@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         // }
         //print(health);
         shieldCooldown.value = 20 - timeToShield;
-        print(timeToShield);
+        //print(timeToShield);
 
         shieldAppear();
         singleTouch();
