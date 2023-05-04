@@ -185,8 +185,9 @@ public class Conductor : MonoBehaviour
             //additional info
             int type = 0; // 0 = small, 1 = shield, -2 = large
             int color = 0; // 0 = color a, 1 = color b
-            if (nn[1] == "FALSE") type = 0;
-            else if (nn[1] == "TRUE") type = 1;
+            if (nn[1] == "SMALL") type = 0;
+            else if (nn[1] == "SHIELD") type = 1;
+            else if (nn[1] == "LARGE") type = -2;
 
             if (nn[2] == "COLORA") color = 0;
             else if (nn[2] == "COLORB") color = 1;

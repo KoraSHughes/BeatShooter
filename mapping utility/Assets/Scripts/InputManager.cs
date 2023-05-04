@@ -58,7 +58,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) 
             type = 1;
         else if (Input.GetKey(KeyCode.LeftShift))
-            type = 2;
+            type = -2;
 
         //left press down check
         if (Input.GetKeyDown(left[0])) {
