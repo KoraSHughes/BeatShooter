@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void HealthUI(bool io) {
-        print("healthui");
+        // print("healthui");
         heart1.SetActive(io);
         heart2.SetActive(io);
         heart3.SetActive(io);
