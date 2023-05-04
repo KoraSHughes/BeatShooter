@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public bool type = true;
     public GameObject explo1;
     public GameObject explo2;
-    public GameObject Shield;
+    public GameObject _shield;
     public GameObject smallexplo;
     public GameObject bigexplo;
     GameManager _gameManager;
@@ -33,13 +33,13 @@ public class Enemy : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
-        Shield.GetComponent<Shield>().update_type(type);
+        _shield.GetComponent<Shield>().update_type(type);
 
         health = Random.Range(minHealth, maxHealth+1);
         //healthBar.maxValue = health;
         if (health <= 1){
-            // Shield.SetActive(false);
-            Shield.GetComponent<Shield>().invis(true);
+            // _shield.SetActive(false);
+            _shield.GetComponent<Shield>().invis(true);
         }
     }
 
@@ -60,32 +60,28 @@ public class Enemy : MonoBehaviour
     }
 
     private void updatePos() {
-        if ((track == 0) || (track == 2)) { //top & bottom
+        if (track == 0) { //top
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)),
+                                            startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.z);
-            print("startPos: " + startPos + " endPos: " + endPos);
-            print("math: " + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)));
-            print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
+            //print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
         }
-        else if ((track == 1) || (track == 3)) { //left & right
-            transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)),
+        else if (track == 1) { //left
+            transform.position = new Vector3(startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.y,
                                             transform.position.z);
-            print("startPos: " + startPos + " endPos: " + endPos);
-            print("math: " + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats)));
-            print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
+            //print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
         }
-/*         else if (track == 2) { //bottom
+        else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            startPos + (1f - (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.z);
         }
         else if (track == 3) { //right
-            transform.position = new Vector3(startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+            transform.position = new Vector3(startPos + (1f + (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.y,
                                             transform.position.z);
-        } */
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -101,7 +97,7 @@ public class Enemy : MonoBehaviour
             else{
                 Instantiate(smallexplo, transform.position, Quaternion.identity);
                 if (health == 1){
-                    Shield.GetComponent<Shield>().invis(true);
+                    _shield.GetComponent<Shield>().invis(true);
                 }
             }
             Destroy(other.gameObject);

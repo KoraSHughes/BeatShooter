@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     public static int health = 3;  // number of hits player can take
 
-    public GameObject shield;
+    public GameObject _shield;
     float timeToShield = 0.0f;
     private float ShieldDuration = 5.0f;
     private float ShieldInc = 15.0f;
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // if (SceneManager.GetActiveScene().name == "4) Song2") {
-        //     Shield.SetActive(true);
+        //     _shield.SetActive(true);
         // }
         //print(health);
 
@@ -64,33 +64,33 @@ public class Player : MonoBehaviour
         else{
             timeToShoot = 0;
         }
+
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
             if (timeToShield >= ShieldInc){
-                shield.GetComponent<Shield>().invis(false);
+                _shield.GetComponent<Shield>().invis(false);
             }
             else{
-                shield.GetComponent<Shield>().invis(true);
+                _shield.GetComponent<Shield>().invis(true);
             }
         }
         else{
             timeToShield = 0;
-            shield.GetComponent<Shield>().invis(true);
+            _shield.GetComponent<Shield>().invis(true);
         }
         
 
         for (int i=0; i < Input.touchCount; ++i){  // track all touches
             Touch touch = Input.GetTouch(i);
             Vector2 pos = cam.ScreenToWorldPoint(touch.position); 
-            int touch_reigon = get_reigon(pos);
+            int touch_region = get_region(pos);
 
             if (i == 0 && touch.phase == TouchPhase.Began){
                 // Debug.Log("Touches " + Input.touchCount.ToString() + ": " + pos.ToString());
-                // int touch_reigon = get_reigon(pos);
+                // int touch_region = get_region(pos);
                 
-                // rotate user based on reigon
-                switch (touch_reigon)
-                {
+                // rotate user based on region
+                switch (touch_region) {
                     case 1:
                         myAngle = 90f;
                         break;
@@ -143,14 +143,14 @@ public class Player : MonoBehaviour
                     if (gunType){
                         gunType = false;
                         sprite.color = color2;
-                        shield.GetComponent<Shield>().update_type(gunType);
+                        _shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("red");
                         
                     }
                     else{
                         gunType = true;
                         sprite.color = color1;
-                        shield.GetComponent<Shield>().update_type(gunType);
+                        _shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("blue");
                     }
                 }
@@ -164,8 +164,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    int get_reigon(Vector2 touchPos){
-        // returns screen reigon {left: 1, right: 2, up: 3, down: 4} & 0 is not far enough
+    int get_region(Vector2 touchPos){
+        // returns screen region {left: 1, right: 2, up: 3, down: 4} & 0 is not far enough
         Debug.Log("Comparing:" + (Mathf.Abs(touchPos.x),Mathf.Abs(touchPos.y)).ToString() +
                   " vs. " + (width*touch_threshold, height*touch_threshold).ToString());
         if (Mathf.Abs(touchPos.x) < width*touch_threshold &&

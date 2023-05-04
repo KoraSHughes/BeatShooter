@@ -241,7 +241,7 @@ MonoBehaviour:
   type: 1
   explo1: {fileID: 3347036263119039397, guid: 38fd024b58b8c42b3b887384fc1d036a, type: 3}
   explo2: {fileID: 3347036263119039397, guid: fb47207097c0c4602967cbe58c7229ec, type: 3}
-  Shield: {fileID: 6655413724247223466}
+  _shield: {fileID: 6655413724247223466}
   smallexplo: {fileID: 3347036263119039397, guid: 3e337e32ff76546d8a78cc251f6ca532, type: 3}
   bigexplo: {fileID: 3347036263119039397, guid: cdc024c55c2624c04bb911c59fa0d5c7, type: 3}
   maxHealth: 4
