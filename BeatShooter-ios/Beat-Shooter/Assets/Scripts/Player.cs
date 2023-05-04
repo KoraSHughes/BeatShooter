@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     float timeToShield = 0.0f;
     private float ShieldDuration = 5.0f;
     private float ShieldInc = 15.0f;
+    private Slider shieldCooldown;
 
     void Start()
     {
@@ -45,6 +46,8 @@ public class Player : MonoBehaviour
         color2 = bulletPrefab2.GetComponent<SpriteRenderer>().color;
 
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        shieldCooldown = GameObject.FindGameObjectWithTag("ShieldCooldown").GetComponent<Slider>();
+        _gameManager.HealthUIColor("blue");
 
         // width = (float)Screen.width / 2.0f;
         // height = (float)Screen.height / 2.0f;
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
         //     _shield.SetActive(true);
         // }
         //print(health);
+        shieldCooldown.value = 20 - timeToShield;
+        print(timeToShield);
 
         if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;

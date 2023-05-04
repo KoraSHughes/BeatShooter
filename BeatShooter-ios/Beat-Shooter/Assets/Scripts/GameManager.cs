@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject heart1;
     public GameObject heart2;
     public GameObject heart3;
+    public GameObject shieldCooldownUI;
     // private GameObject heart1border;
     // private GameObject heart2border;
     // private GameObject heart3border;    
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     private Image heart1image;
     private Image heart2image;
     private Image heart3image;
+    private Image cooldown;
+    private Image shield;
     private Color blue = new Color(0.01568628f, 0.1921569f, 0.3764706f, 1.0f);
     private Color red = new Color(0.5f, 0.0f, 0.0f, 1.0f);
     
@@ -49,6 +52,9 @@ public class GameManager : MonoBehaviour
         heart2image = heart2.GetComponent<Image>();
         heart3image = heart3.GetComponent<Image>();
 
+        cooldown = GameObject.FindGameObjectWithTag("Cooldown").GetComponent<Image>();
+        shield = GameObject.FindGameObjectWithTag("ShieldUI").GetComponent<Image>();
+        
         // heart1border = GameObject.FindGameObjectWithTag("Heart1Border");
         // heart2border = GameObject.FindGameObjectWithTag("Heart2Border");
         // heart3border = GameObject.FindGameObjectWithTag("Heart3Border");
@@ -63,6 +69,7 @@ public class GameManager : MonoBehaviour
         songSelectMenu.SetActive(false);
         HealthUI(false);
         scoreGameObject.SetActive(false);
+        shieldCooldownUI.SetActive(false);
         
     }
 
@@ -97,6 +104,7 @@ public class GameManager : MonoBehaviour
         songSelectMenu.SetActive(true);
         HealthUI(false);
         scoreGameObject.SetActive(false);
+        shieldCooldownUI.SetActive(false);
     }
 
     public void MainMenu() {
@@ -111,6 +119,7 @@ public class GameManager : MonoBehaviour
         songSelectMenu.SetActive(false);
         HealthUI(false);
         scoreGameObject.SetActive(false);
+        shieldCooldownUI.SetActive(false);
         Time.timeScale = 1f;
         AddScore(-score);
     }
@@ -153,6 +162,7 @@ public class GameManager : MonoBehaviour
         HealthUIColor("red");
         Player.health = 3;
         scoreGameObject.SetActive(true);
+        shieldCooldownUI.SetActive(true);
     }
 
     private void Start(){
@@ -219,10 +229,14 @@ public class GameManager : MonoBehaviour
             heart1image.color = blue;
             heart2image.color = blue;
             heart3image.color = blue;
+            cooldown.color = blue;
+            shield.color = blue;
         } else {
             heart1image.color = red;
             heart2image.color = red;
             heart3image.color = red;
+            cooldown.color = red;
+            shield.color = red;
         }
     }
 }
