@@ -62,12 +62,13 @@ public class Player : MonoBehaviour
         //print(timeToShield);
 
         shieldAppear();
-        singleTouch();
         // do a block/Shield
         if (timeToShield <= 0){
             detectSwipe();
             timeToShield += ShieldInc + ShieldDuration;
         }
+        singleTouch();
+        
     }
 
     public void shieldAppear() {
