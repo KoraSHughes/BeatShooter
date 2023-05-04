@@ -124,6 +124,14 @@ public class GameManager : MonoBehaviour
         AddScore(-score);
     }
 
+    public void Tutorial() {
+        SceneManager.LoadScene(5);
+        background.SetActive(false);
+        startButton.SetActive(false);
+        settingsButton.SetActive(false);
+        HealthUI(false);
+    }
+
     public void PlaySongOne() {
         SceneManager.LoadScene(2);
         LevelUISettings();
