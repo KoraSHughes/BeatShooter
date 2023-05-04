@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
             // _gameManager.AddScore(eVal);
             health -= 1;
             isHit = true;
-            if (health <= 0){
+            if (health == 0){
                 Instantiate((color)?explo1:explo2, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 _gameManager.AddScore(10);

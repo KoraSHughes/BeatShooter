@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
 
     public GameObject _shield;
     float timeToShield = 0.0f;
-    private float ShieldDuration = 5.0f;
-    private float ShieldInc = 15.0f;
+    public float ShieldDuration = 5.0f;
+    public float ShieldInc = 15.0f;
     private Slider shieldCooldown;
 
     void Start()
@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
         shieldCooldown.value = 20 - timeToShield;
         print(timeToShield);
 
+        shieldAppear();
+        singleTouch();
         // do a block/Shield
         if (timeToShield <= 0){
             detectSwipe();
@@ -194,16 +196,16 @@ public class Player : MonoBehaviour
  
                 // Swipe up
                 if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f) 
-                    shieldAppear();
+                    _shield.GetComponent<Shield>().invis(false);
                 // Swipe down
                 else if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-                    shieldAppear();
+                    _shield.GetComponent<Shield>().invis(false);
                 // Swipe left
                 else if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-                    shieldAppear();
+                    _shield.GetComponent<Shield>().invis(false);
                 // Swipe right
                 else if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-                    shieldAppear();
+                    _shield.GetComponent<Shield>().invis(false);
             }
         }
     }

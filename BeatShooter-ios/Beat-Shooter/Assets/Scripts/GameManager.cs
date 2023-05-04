@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     private Image heart2image;
     private Image heart3image;
     private Image cooldown;
-    private Image shield;
+    private Image _shield;
     private Color blue = new Color(0, 107, 255, 255);
     private Color red = new Color(255, 0, 64, 255);
     
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         heart3image = heart3.GetComponent<Image>();
 
         cooldown = GameObject.FindGameObjectWithTag("Cooldown").GetComponent<Image>();
-        shield = GameObject.FindGameObjectWithTag("ShieldUI").GetComponent<Image>();
+        _shield = GameObject.FindGameObjectWithTag("ShieldUI").GetComponent<Image>();
         
         // heart1border = GameObject.FindGameObjectWithTag("Heart1Border");
         // heart2border = GameObject.FindGameObjectWithTag("Heart2Border");
@@ -238,13 +238,13 @@ public class GameManager : MonoBehaviour
             heart2image.color = blue;
             heart3image.color = blue;
             cooldown.color = blue;
-            shield.color = blue;
+            _shield.color = blue;
         } else {
             heart1image.color = red;
             heart2image.color = red;
             heart3image.color = red;
             cooldown.color = red;
-            shield.color = red;
+            _shield.color = red;
         }
     }
 }
