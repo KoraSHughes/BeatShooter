@@ -5,8 +5,8 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     bool type = true;
-    Color redColor = new Color(255, 64, 64);
-    Color blueColor = new Color(64, 87, 255);
+    Color redColor = new Color(255, 0, 64, 255);
+    Color blueColor = new Color(0, 107, 255, 255);
     Color notSeen = new Color(0,0,0,0);
 
     // Start is called before the first frame update
@@ -14,11 +14,8 @@ public class Shield : MonoBehaviour
         update_color();
     }
 
-    // Update is called once per frame
-    void Update() {
-        
-    }
     void update_color() {
+        print("color: " + (type ? "blue" : "red"));
         transform.GetComponent<SpriteRenderer>().material.color = type ? blueColor : redColor;
     }
 
@@ -29,6 +26,7 @@ public class Shield : MonoBehaviour
 
     public void invis(bool isInvis) {
         if (isInvis){
+            print("isInvis");
             transform.GetComponent<SpriteRenderer>().material.color = notSeen;
         }
         else{

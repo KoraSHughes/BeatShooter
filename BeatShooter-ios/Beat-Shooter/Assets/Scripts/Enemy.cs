@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody2D _rigidbody2D;
-    public bool type = true;
+    public bool color = true;
     public GameObject explo1;
     public GameObject explo2;
     public GameObject _shield;
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
-        _shield.GetComponent<Shield>().update_type(type);
+        _shield.GetComponent<Shield>().update_type(color);
 
         health = Random.Range(minHealth, maxHealth+1);
         //healthBar.maxValue = health;
@@ -48,12 +48,13 @@ public class Enemy : MonoBehaviour
         updatePos();
     }
 
-    public void Initialize(float startPos, float endPos, float beat, float track, float enemType){
+    public void Initialize(float startPos, float endPos, float beat, float track, float color, float enemType){
         this.startPos = startPos;
         this.endPos = endPos;
         this.beat = beat;
         this.track = Mathf.RoundToInt(track);
-        this.type = (enemType == 1) ? true : false;
+        this.color = (color == 0) ? true : false;
+        this.health = Mathf.RoundToInt(enemType + 1);
         //wasTriggered = false;
         
         _conductor = GameObject.Find("Conductor").GetComponent<Conductor>();
@@ -74,23 +75,23 @@ public class Enemy : MonoBehaviour
         }
         else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.z);
         }
         else if (track == 3) { //right
-            transform.position = new Vector3(startPos + (1f + (beat - _conductor.songPosInBeats) * 2f),
+            transform.position = new Vector3(startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 2f),
                                             transform.position.y,
                                             transform.position.z);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if ( (other.CompareTag("bullet1") && type == true) || (other.CompareTag("bullet2") && type == false) ) {
+        if ( (other.CompareTag("bullet1") && color == true) || (other.CompareTag("bullet2") && color == false) ) {
             // _gameManager.AddScore(eVal);
             health -= 1;
             isHit = true;
             if (health <= 0){
-                Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
+                Instantiate((color)?explo1:explo2, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 _gameManager.AddScore(10);
             }
@@ -106,7 +107,7 @@ public class Enemy : MonoBehaviour
             if (other.GetComponent<Player>().isShielded() == false){
                 bool isAlive = other.GetComponent<Player>().damage(1);
                 if (isAlive){
-                    Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
+                    Instantiate((color)?explo1:explo2, transform.position, Quaternion.identity);
                     Destroy(gameObject);
                 }
                 else{
@@ -116,11 +117,11 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-        // else if (other.CompareTag("Shield")){ 
-        //     health = 0;
-        //     Instantiate((type)?explo1:explo2, transform.position, Quaternion.identity);
-        //     Destroy(gameObject);
-        //     _gameManager.AddScore(10);
-        // }
+        else if (health < 0 && other.CompareTag("Shield")){ 
+            health = 0;
+            Instantiate((color)?explo1:explo2, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            _gameManager.AddScore(10);
+        }
     }
 }

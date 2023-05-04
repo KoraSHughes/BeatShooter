@@ -53,9 +53,7 @@ public class Player : MonoBehaviour
         // height = (float)Screen.height / 2.0f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         // if (SceneManager.GetActiveScene().name == "4) Song2") {
         //     _shield.SetActive(true);
         // }
@@ -63,16 +61,24 @@ public class Player : MonoBehaviour
         shieldCooldown.value = 20 - timeToShield;
         print(timeToShield);
 
+        // do a block/Shield
+        if (timeToShield <= 0){
+            detectSwipe();
+            timeToShield += ShieldInc + ShieldDuration;
+        }
+    }
+
+    public void shieldAppear() {
         if (timeToShoot > 0){ // shoot cooldown
             timeToShoot -= Time.deltaTime;
         }
         else{
             timeToShoot = 0;
         }
-
+        
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
-            if (timeToShield >= ShieldInc){
+            if (timeToShield >= ShieldInc) {
                 _shield.GetComponent<Shield>().invis(false);
             }
             else{
@@ -83,8 +89,9 @@ public class Player : MonoBehaviour
             timeToShield = 0;
             _shield.GetComponent<Shield>().invis(true);
         }
-        
+    }
 
+    public void singleTouch() {
         for (int i=0; i < Input.touchCount; ++i){  // track all touches
             Touch touch = Input.GetTouch(i);
             Vector2 pos = cam.ScreenToWorldPoint(touch.position); 
@@ -150,7 +157,6 @@ public class Player : MonoBehaviour
                         sprite.color = color2;
                         _shield.GetComponent<Shield>().update_type(gunType);
                         _gameManager.HealthUIColor("red");
-                        
                     }
                     else{
                         gunType = true;
@@ -160,11 +166,44 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            else if (i == 1 && touch.phase == TouchPhase.Began){
-                // do a block/Shield
-                if (timeToShield == 0){
-                    timeToShield += ShieldInc + ShieldDuration;
+        }
+    }
+
+    public void detectSwipe () {
+        if (Input.touches.Length > 0) {
+            Touch touch = Input.GetTouch(0);
+            float minSwipeLength = 200f;
+            Vector2 firstPressPos = new Vector2(-100,-100), currentSwipe = new Vector2(-100,-100), secondPressPos;
+
+ 
+            if (touch.phase == TouchPhase.Began) {
+                firstPressPos = new Vector2(touch.position.x, touch.position.y);
+            }
+ 
+            if (touch.phase == TouchPhase.Ended) {
+                secondPressPos = new Vector2(touch.position.x, touch.position.y);
+                if(firstPressPos.x != -100 && touch.position.y != -100)
+                    currentSwipe = new Vector2(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
+           
+                // Make sure it was a legit swipe, not a tap
+                if (currentSwipe.magnitude < minSwipeLength) {
+                    return;
                 }
+           
+                currentSwipe.Normalize();
+ 
+                // Swipe up
+                if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f) 
+                    shieldAppear();
+                // Swipe down
+                else if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
+                    shieldAppear();
+                // Swipe left
+                else if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+                    shieldAppear();
+                // Swipe right
+                else if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
+                    shieldAppear();
             }
         }
     }

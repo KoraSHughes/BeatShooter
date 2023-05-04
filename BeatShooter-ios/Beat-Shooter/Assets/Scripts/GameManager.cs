@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     private Image heart3image;
     private Image cooldown;
     private Image shield;
-    private Color blue = new Color(0.01568628f, 0.1921569f, 0.3764706f, 1.0f);
-    private Color red = new Color(0.5f, 0.0f, 0.0f, 1.0f);
+    private Color blue = new Color(0, 107, 255, 255);
+    private Color red = new Color(255, 0, 64, 255);
     
     private void Awake(){
         if (GameObject.FindObjectsOfType<GameManager>().Length > 1){

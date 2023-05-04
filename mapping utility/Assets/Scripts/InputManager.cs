@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
 {
     public KeyCode[] left, up, down, right;
     string direction; //l: 0, u: 1, d: 2, r: 3
-    enum NoteType{COLORA, COLORB, FALSE, TRUE}; //doing a bit 
+    enum NoteType{COLORA, COLORB, SMALL, SHIELD, LARGE}; //doing a bit 
     //public List<Vector2> notes; //y is beat, x is position
     List<string> mapLst;
     int lastPos, escCount, type;
@@ -18,7 +18,8 @@ public class InputManager : MonoBehaviour
     private void pressDownHelper(int color) {
         //if (Input.GetKey(KeyCode.Space)) {
             print("Pressed!\n");
-            mapLst.Add(direction + " " + (type == 0 ? NoteType.FALSE: NoteType.TRUE) + (color == 0 ? NoteType.COLORA : NoteType.COLORB) + " " + Conductor.songPosInBeats + "\n");
+            mapLst.Add(direction + " " + (type == 0 ? NoteType.SMALL: type == 1 ? NoteType.SHIELD : NoteType.LARGE)
+            + (color == 0 ? NoteType.COLORA : NoteType.COLORB) + " " + Conductor.songPosInBeats + "\n");
         //}
 /*         else {
             if (held1start == -1) {
@@ -56,6 +57,8 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space)) 
             type = 1;
+        else if (Input.GetKey(KeyCode.LeftShift))
+            type = 2;
 
         //left press down check
         if (Input.GetKeyDown(left[0])) {

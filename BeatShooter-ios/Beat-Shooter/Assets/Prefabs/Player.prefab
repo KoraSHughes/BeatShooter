@@ -127,7 +127,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 4f3d817ad821bc345b488255f0de8318, type: 3}
-  m_Color: {r: 0, g: 0.2578125, b: 1, a: 0.8666667}
+  m_Color: {r: 0, g: 0.41960785, b: 1, a: 0.8666667}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -252,6 +252,10 @@ PrefabInstance:
     - target: {fileID: 4114946610421086286, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327754351230938157, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
+      propertyPath: m_Color.g
+      value: 0.41960785
       objectReference: {fileID: 0}
     - target: {fileID: 4873763410400611455, guid: 997eb773def644dccbe0e08c89dfac12, type: 3}
       propertyPath: m_Name

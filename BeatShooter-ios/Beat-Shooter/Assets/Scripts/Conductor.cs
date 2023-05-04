@@ -132,7 +132,7 @@ public class Conductor : MonoBehaviour
 
             Enemy newEnemy = Instantiate(_enemy, pos.position, Quaternion.identity);
             //newEnemy.GetComponent<Rigidbody2D>().AddForce(force);
-            newEnemy.Initialize(startPos, endPos, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x);
+            newEnemy.Initialize(startPos, endPos, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x, otherNoteInfo[nextIndex].y);
             spawnedEnemies.Add(_enemy);
             nextIndex++;
         }
@@ -183,7 +183,7 @@ public class Conductor : MonoBehaviour
             notes.Add(new Vector2(lane, ty));
             
             //additional info
-            int type = 0; // 0 = small, 1 = large
+            int type = 0; // 0 = small, 1 = shield, -2 = large
             int color = 0; // 0 = color a, 1 = color b
             if (nn[1] == "FALSE") type = 0;
             else if (nn[1] == "TRUE") type = 1;

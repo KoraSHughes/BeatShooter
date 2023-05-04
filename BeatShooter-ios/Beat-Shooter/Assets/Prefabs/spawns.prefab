@@ -133,7 +133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9053421256828772600}
-  - component: {fileID: 9053421256828772603}
   m_Layer: 0
   m_Name: spawns
   m_TagString: Untagged
@@ -160,25 +159,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9053421256828772603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9053421256828772601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248e927f08a984df0bfd242eafec0b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  top: {fileID: 9053421254767619132}
-  bottom: {fileID: 9053421255502091312}
-  left: {fileID: 9053421255737997814}
-  right: {fileID: 9053421255535058951}
-  enemies:
-  - {fileID: 4533976259274264410, guid: fbd7fc600713342a5953e8081dcb5dd5, type: 3}
-  - {fileID: 4533976259274264410, guid: f10c71ffb501a4bccb725d4bb32104d1, type: 3}
-  - {fileID: 3458985344226990005, guid: d3ac03019245c96439986a8207b5552e, type: 3}
-  - {fileID: 7425933824222807524, guid: 79cee8a4c58ab31409f9a159bf0bc90b, type: 3}
-  map: {fileID: 0}
