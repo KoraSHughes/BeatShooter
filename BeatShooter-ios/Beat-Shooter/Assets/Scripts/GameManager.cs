@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public GameState state;
     private AudioSource backgroundMusic;
 
-    private int maxscore = 470; //1: 470, 2: 890, 3: 0
+    //public int maxscore = 470; //1: 470, 2: 890, 3: 0
 
     private void Awake(){
         if (GameObject.FindObjectsOfType<GameManager>().Length > 1){
@@ -200,13 +200,13 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(true);
         PauseHandler();
         
-        gameOverScoreText.text = "score:" + score + " / " + maxscore;
+        gameOverScoreText.text = "score:" + score;
         Time.timeScale = 0f;
     }
 
     public void YouWin(){
         titleUI.text = "LEVEL COMPLETE";
-        gameOverScoreText.text = "Score:" + score + " / " + maxScore;
+        gameOverScoreText.text = "Score:" + score;
     }
 
     public void SettingsMenu() {
