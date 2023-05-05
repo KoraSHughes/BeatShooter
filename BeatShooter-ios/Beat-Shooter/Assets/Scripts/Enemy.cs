@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     public float startPos, endPos;
     public int track; //0 = w; 1 = a; 2 = s; 3 = d
     public float beat;
+    public float speed = 1.5f;
     public bool isHit;
 
     public Conductor _conductor;
@@ -45,16 +46,20 @@ public class Enemy : MonoBehaviour
             // _shield.SetActive(false);
             _shield.GetComponent<Shield>().ActiveSetter(false);
         }
+        else {
+            _shield.GetComponent<Shield>().ActiveSetter(true);
+        }
         updatePos();
     }
 
-    public void Initialize(float startPos, float endPos, float beat, float track, float color, float enemType){
+    public void Initialize(float startPos, float endPos, float beat, float track, float enemType, float color, float speed){
         this.startPos = startPos;
         this.endPos = endPos;
         this.beat = beat;
         this.track = Mathf.RoundToInt(track);
         this.color = (color == 0) ? true : false;
         this.health = Mathf.RoundToInt(enemType + 1);
+        this.speed = speed;
         //wasTriggered = false;
         
         _conductor = GameObject.Find("Conductor").GetComponent<Conductor>();
@@ -63,23 +68,23 @@ public class Enemy : MonoBehaviour
     private void updatePos() {
         if (track == 0) { //top
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 1.5f),
+                                            startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * speed),
                                             transform.position.z);
             //print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
         }
         else if (track == 1) { //left
-            transform.position = new Vector3(startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 1.5f),
+            transform.position = new Vector3(startPos - (2) * (1f + (beat - _conductor.songPosInBeats) * speed),
                                             transform.position.y,
                                             transform.position.z);
             //print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
         }
         else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 1.5f),
+                                            startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * speed),
                                             transform.position.z);
         }
         else if (track == 3) { //right
-            transform.position = new Vector3(startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 1.5f),
+            transform.position = new Vector3(startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * speed),
                                             transform.position.y,
                                             transform.position.z);
         }

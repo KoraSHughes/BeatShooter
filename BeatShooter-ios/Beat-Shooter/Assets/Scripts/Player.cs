@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
             if (touch.phase == TouchPhase.Ended) {
                 firstPressPos = touch.position;
                 bool val = false;
+                print(timeToShield);
                 if (timeToShield <= 0)
                     val = detectSwipe();
                 if (!val)

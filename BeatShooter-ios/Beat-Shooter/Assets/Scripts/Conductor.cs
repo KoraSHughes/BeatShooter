@@ -22,7 +22,7 @@ public class Conductor : MonoBehaviour
     public AudioSource _audioSource;
 
     public List<Vector2> notes; //y is beat, x is position
-    public List<Vector2> otherNoteInfo;
+    public List<Vector3> otherNoteInfo;
     public int nextIndex;
     public float beatsSpawned;
     public float songPlayOffset;
@@ -101,7 +101,7 @@ public class Conductor : MonoBehaviour
             Vector2 force = new Vector2(0,0);
             
             //x = type; y = color.
-            if((otherNoteInfo[nextIndex].x == 0) && (otherNoteInfo[nextIndex].y == 1)) // if small and red
+            if((otherNoteInfo[nextIndex].x >= 0) && (otherNoteInfo[nextIndex].y == 1)) // if small and red
                 _enemy = enemy1B;
             else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 0)) // if large and blue
                 _enemy = enemy2A;
@@ -133,7 +133,7 @@ public class Conductor : MonoBehaviour
 
             Enemy newEnemy = Instantiate(_enemy, pos.position, Quaternion.identity);
             //newEnemy.GetComponent<Rigidbody2D>().AddForce(force);
-            newEnemy.Initialize(startPos, endPos, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x, otherNoteInfo[nextIndex].y);
+            newEnemy.Initialize(startPos, endPos, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x, otherNoteInfo[nextIndex].y, otherNoteInfo[nextIndex].z);
             spawnedEnemies.Add(_enemy);
             nextIndex++;
         }
@@ -162,7 +162,7 @@ public class Conductor : MonoBehaviour
 
     void GenerateNotes(){
         notes = new List<Vector2>();
-        otherNoteInfo = new List<Vector2>();
+        otherNoteInfo = new List<Vector3>();
         string fs = map.text;
         string[] maplines = fs.Split('\n');
         var metadata = maplines[0].Split(' ');
@@ -179,13 +179,15 @@ public class Conductor : MonoBehaviour
             if (nn[0].Contains("/") || nn.Length==1)
                 continue;
             float lane = float.Parse(nn[0]); //0 = w; 1 = a; 2 = s; 3 = d
-            float ty = float.Parse(nn[3]) + offset;
+            float ty = float.Parse(nn[4]) + offset;
             //print(tx + " " + ty);
             notes.Add(new Vector2(lane, ty));
             
             //additional info
             int type = 0; // 0 = small, 1 = shield, -2 = large
             int color = 0; // 0 = color a, 1 = color b
+            float speed = float.Parse(nn[3]);
+
             if (nn[1] == "SMALL") type = 0;
             else if (nn[1] == "SHIELD") type = 1;
             else if (nn[1] == "LARGE") type = -2;
@@ -193,7 +195,7 @@ public class Conductor : MonoBehaviour
             if (nn[2] == "COLORA") color = 0;
             else if (nn[2] == "COLORB") color = 1;
 
-            otherNoteInfo.Add(new Vector2(type, color));
+            otherNoteInfo.Add(new Vector3(type, color, speed));
         }
     }
 
