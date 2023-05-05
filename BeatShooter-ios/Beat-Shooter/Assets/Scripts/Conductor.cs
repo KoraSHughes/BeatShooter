@@ -43,7 +43,7 @@ public class Conductor : MonoBehaviour
     [HideInInspector]
     List<Enemy> spawnedEnemies;
     //int spawnedEnemiesInd;
-    public int currentTrack = 0;
+    public int currentTrack = 0;game
     int lastanim;
     public float enemyKillWindow = 0.06f;
     bool done;
