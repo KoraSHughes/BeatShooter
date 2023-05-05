@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     public GameState state;
     
+    private AudioSource backgroundMusic;
+
     private void Awake(){
         if (GameObject.FindObjectsOfType<GameManager>().Length > 1){
             Destroy(gameObject);
@@ -72,7 +74,8 @@ public class GameManager : MonoBehaviour
         HealthUI(false);
         scoreGameObject.SetActive(false);
         shieldCooldownUI.SetActive(false);
-        
+        backgroundMusic = GetComponent<AudioSource>();
+        backgroundMusic.Play();
     }
 
     public void Update(){
@@ -127,6 +130,7 @@ public class GameManager : MonoBehaviour
         shieldCooldownUI.SetActive(false);
         Time.timeScale = 1f;
         AddScore(-score);
+        backgroundMusic.Play();
     }
 
     public void Tutorial() {
@@ -176,6 +180,7 @@ public class GameManager : MonoBehaviour
         Player.health = 3;
         scoreGameObject.SetActive(true);
         shieldCooldownUI.SetActive(true);
+        backgroundMusic.Pause();
     }
 
     private void Start(){
@@ -190,6 +195,8 @@ public class GameManager : MonoBehaviour
     public void GameOver(){
         // titleUI.text = "GAME OVER!!";
         gameOverMenu.SetActive(true);
+        PauseHandler();
+        
         gameOverScoreText.text = "Score:" + score;
         Time.timeScale = 0f;
     }

@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
 
     public GameObject _shield;
     float timeToShield = 0.0f;
-    public float ShieldDuration = 1f;
-    public float ShieldInc = 5f;
+    private float ShieldDuration = 1f;
+    private float ShieldInc = 5f;
     private Slider shieldCooldown;
 
     Vector2 firstPressPos = new Vector2(-100,-100), currentSwipe = new Vector2(-100,-100), secondPressPos;
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         //     _shield.SetActive(true);
         // }
         //print(health);
-        shieldCooldown.value = 5 - timeToShield;
+        shieldCooldown.value = 6 - timeToShield;
         //print(timeToShield);
 
         shieldAppear();
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
             if (touch.phase == TouchPhase.Ended) {
                 firstPressPos = touch.position;
                 bool val = false;
-                print(timeToShield);
+                // print(timeToShield);
                 if (timeToShield <= 0)
                     val = detectSwipe();
                 if (!val)
