@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
+        gameOverMenu.GetComponent<Canvas>().enabled = false;
         songSelectMenu.SetActive(false);
         HealthUI(false);
         scoreGameObject.SetActive(false);
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
+        gameOverMenu.GetComponent<Canvas>().enabled = false;
         songSelectMenu.SetActive(true);
         HealthUI(false);
         scoreGameObject.SetActive(false);
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
+        gameOverMenu.GetComponent<Canvas>().enabled = false;
         songSelectMenu.SetActive(false);
         HealthUI(false);
         scoreGameObject.SetActive(false);
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(){
         titleUI.text = "GAME OVER";
-        gameOverMenu.SetActive(true);
+        //gameOverMenu.SetActive(true);
         PauseHandler();
         
         gameOverScoreText.text = "score:" + score;
@@ -242,7 +242,7 @@ public class GameManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         pauseMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
+        gameOverMenu.GetComponent<Canvas>().enabled = false;
         HealthUI(true);
         Time.timeScale = 1f;
         Player.health = 3;
