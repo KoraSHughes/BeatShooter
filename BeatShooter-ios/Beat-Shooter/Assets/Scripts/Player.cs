@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     public GameObject _shield;
     float timeToShield = 0.0f;
-    //public float ShieldDuration = 1f;
+    public float ShieldDuration = 1f;
     public float ShieldInc = 5f;
     private Slider shieldCooldown;
 
@@ -66,10 +66,6 @@ public class Player : MonoBehaviour
         shieldAppear();
 
         // do a block/Shield
-/*         if (timeToShield <= 0){
-            
-            timeToShield += ShieldInc + ShieldDuration;
-        } */
         for (int i=0; i < Input.touchCount; ++i){
             Touch touch = Input.GetTouch(i);
             if (touch.phase == TouchPhase.Began) {
@@ -98,12 +94,12 @@ public class Player : MonoBehaviour
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
             if (timeToShield >= ShieldInc) {
-                _shield.GetComponent<Shield>().ActiveSetter(false);
-            }
-            else{
                 _shield.GetComponent<Shield>().ActiveSetter(true);
             }
-        }
+            else{
+                _shield.GetComponent<Shield>().ActiveSetter(false);
+            }
+        }   
         else{
             timeToShield = 0;
             _shield.GetComponent<Shield>().ActiveSetter(false);
@@ -212,6 +208,8 @@ public class Player : MonoBehaviour
         else if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
             _shield.GetComponent<Shield>().ActiveSetter(true);
         //}
+
+        timeToShield += ShieldInc + ShieldDuration;
         return true;
     }
 

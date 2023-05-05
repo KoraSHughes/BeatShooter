@@ -55,18 +55,22 @@ public class InputManager : MonoBehaviour
             mapLst.Add("/*" + Conductor.songPos + " current pos*/\n");
         }
 
-        if (Input.GetKey(KeyCode.Space)) 
-            type = 1;
-        else if (Input.GetKey(KeyCode.LeftShift))
-            type = -2;
 
         //left press down check
         if (Input.GetKeyDown(left[0])) {
             direction = "a";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(left[1])) {
             direction = "a";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(1);
         }
         //up press down check
@@ -76,24 +80,44 @@ public class InputManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(up[1])) {
             direction = "w";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(1);
         }
 
         else if (Input.GetKeyDown(down[0])) {
             direction = "s";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(down[1])) {
             direction = "s";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(1);
         }
 
         else if (Input.GetKeyDown(right[0])) {
             direction = "d";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(right[1])) {
             direction = "d";
+            if (Input.GetKey(KeyCode.Space)) 
+                type = 1;
+            else if (Input.GetKey(KeyCode.LeftShift))
+                type = -2;
             pressDownHelper(1);
         }
         

@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     private Image _shield;
     private Color blue = new Color(0, 107, 255, 255);
     private Color red = new Color(255, 0, 64, 255);
+
+    public GameState state;
     
     private void Awake(){
         if (GameObject.FindObjectsOfType<GameManager>().Length > 1){
@@ -84,12 +86,15 @@ public class GameManager : MonoBehaviour
             heart1.SetActive(false);
         }
 
-
 #if !UNITY_WEBGL  // for webGL need platform conditional because it will just freeze otherwise
         if (Input.GetKeyDown(KeyCode.Escape)){
             Application.Quit();
         }
 #endif
+    }
+
+    public void UpdateGameState(GameState newState) {
+        
     }
 
     public void PlayGame() {
@@ -201,13 +206,24 @@ public class GameManager : MonoBehaviour
         settingsMenu.SetActive(false);
     }
 
+    public void PauseHandler() {
+        GameState currentGameState = GameStateManager.Instance.CurrentGameState;
+        GameState newGameState = currentGameState == GameState.Gameplay
+            ? GameState.Paused
+            : GameState.Gameplay;
+
+        GameStateManager.Instance.SetState(newGameState);
+    }
+
     public void PauseMenu() {
         pauseMenu.SetActive(true);
+        PauseHandler();
         Time.timeScale = 0f;
     }
 
     public void PauseCloseButton() {
         pauseMenu.SetActive(false);
+        PauseHandler();
         Time.timeScale = 1f;
     }
 
