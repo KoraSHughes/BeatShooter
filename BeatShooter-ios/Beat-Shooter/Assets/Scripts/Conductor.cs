@@ -98,7 +98,7 @@ public class Conductor : MonoBehaviour
             Transform pos = top.transform;
             float startPos = pos.position.y;
             float endPos = playerGO.transform.position.y;
-            Vector2 force = new Vector2(0,0);
+            float angle = 180;
             
             //x = type; y = color.
             if((otherNoteInfo[nextIndex].x >= 0) && (otherNoteInfo[nextIndex].y == 1)) // if small and red
@@ -108,31 +108,28 @@ public class Conductor : MonoBehaviour
             else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 1)) // if large and red
                 _enemy = enemy2B;
 
-/*             if(notes[nextIndex].x == 0) {
-                pos = top.transform;
-                //force = new Vector2(0, -eSpeed/2);
-            } */
+
             if(notes[nextIndex].x == 1) {
                 pos = left.transform;
                 startPos = pos.position.x;
                 endPos = playerGO.transform.position.x;
-                //force = new Vector2(eSpeed, 0);
+                angle = -90;
             }
             else if(notes[nextIndex].x == 2) {
                 pos = bottom.transform;
                 startPos = pos.position.y;
                 endPos = playerGO.transform.position.y;
-                //force = new Vector2(0, eSpeed/2);
+                angle = 0;
             }
             else if(notes[nextIndex].x == 3) {
                 pos = right.transform;
                 startPos = pos.position.x;
                 endPos = playerGO.transform.position.x;
-                //force = new Vector2(-eSpeed, 0);
+                angle = 90;
             }
 
             Enemy newEnemy = Instantiate(_enemy, pos.position, Quaternion.identity);
-            //newEnemy.GetComponent<Rigidbody2D>().AddForce(force);
+            newEnemy.transform.localRotation = Quaternion.Euler(0,0,angle);
             newEnemy.Initialize(startPos, endPos, notes[nextIndex].y, notes[nextIndex].x, otherNoteInfo[nextIndex].x, otherNoteInfo[nextIndex].y, otherNoteInfo[nextIndex].z);
             spawnedEnemies.Add(_enemy);
             nextIndex++;
