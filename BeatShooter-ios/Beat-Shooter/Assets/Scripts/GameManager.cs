@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     public GameObject shieldCooldownUI;
     // private GameObject heart1border;
     // private GameObject heart2border;
-    // private GameObject heart3border;    
+    // private GameObject heart3border;
+
     public TextMeshProUGUI scoreUI;
     public GameObject scoreGameObject;
     public TextMeshProUGUI titleUI;
@@ -37,8 +38,9 @@ public class GameManager : MonoBehaviour
     private Color red = new Color(0.7490196f, 0, 0.1882353f);
 
     public GameState state;
-    
     private AudioSource backgroundMusic;
+
+    private int maxscore = 470; //1: 470, 2: 890, 3: 0
 
     private void Awake(){
         if (GameObject.FindObjectsOfType<GameManager>().Length > 1){
@@ -194,16 +196,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver(){
-        // titleUI.text = "GAME OVER!!";
+        titleUI.text = "GAME OVER";
         gameOverMenu.SetActive(true);
         PauseHandler();
         
-        gameOverScoreText.text = "Score:" + score;
+        gameOverScoreText.text = "score:" + score + " / " + maxscore;
         Time.timeScale = 0f;
     }
 
     public void YouWin(){
-        titleUI.text = "** You  Win **";
+        titleUI.text = "LEVEL COMPLETE";
+        gameOverScoreText.text = "Score:" + score + " / " + maxScore;
     }
 
     public void SettingsMenu() {

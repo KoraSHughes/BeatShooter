@@ -42,13 +42,13 @@ public class Conductor : MonoBehaviour
 
     [HideInInspector]
     List<Enemy> spawnedEnemies;
-    int spawnedEnemiesInd;
+    //int spawnedEnemiesInd;
     public int currentTrack = 0;
     int lastanim;
     public float enemyKillWindow = 0.06f;
     bool done;
     public int combo, score, targetScore;
-    int scoreAmnt = 100;    
+    //int scoreAmnt = 100;
     float endTimer = 0.5f;
     float endMarker;
     //float hzMod = 1; // modifier for hitting hazards
@@ -81,10 +81,10 @@ public class Conductor : MonoBehaviour
         GenerateNotes();
         secPerBeat = 60f / songBpm;
         nextIndex = 0;
-        spawnedEnemiesInd = 0;
+        //spawnedEnemiesInd = 0;
         score = 0;
         combo = 0;
-        GameObject.Find("You Win Menu UI").GetComponent<Canvas>().enabled = false;
+        GameObject.Find("Game Over Menu UI").GetComponent<Canvas>().enabled = false;
     }
     
     void Update() {
@@ -146,7 +146,7 @@ public class Conductor : MonoBehaviour
                     print(score);
                     score = score + (int)((float)score * ((float)rStats.highestCombo / (float)spawnedEnemies.Count));
                     print(score); */
-                    GameObject.Find("You Win Menu UI").GetComponent<Canvas>().enabled = true;
+                    GameObject.Find("Game Over Menu UI").GetComponent<Canvas>().enabled = true;
                     done = true;
                 }
             }
