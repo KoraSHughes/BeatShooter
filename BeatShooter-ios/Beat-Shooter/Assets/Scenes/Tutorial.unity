@@ -2184,8 +2184,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2626,10 +2626,12 @@ MonoBehaviour:
     SHIELD COOLDOWN IS INDICATED ON THE TOP
     LEFT CORNER
 
-    YOU HAVE 3 LIVES TO COMPLETE EACH SONG
+    WARNING:CERTAIN ENEMIES CAN ONLY BE DESTROYED WITH A SHIELD
 
-    HOW HIGH WILL YOU
-    SCORE?'
+    YOU
+    HAVE 3 LIVES TO COMPLETE EACH SONG
+
+    HOW HIGH WILL YOU SCORE?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 801f0325e9986db499057e6c222fad91, type: 2}
   m_sharedMaterial: {fileID: -7704936014767844838, guid: 801f0325e9986db499057e6c222fad91, type: 2}
@@ -2656,8 +2658,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
