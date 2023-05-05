@@ -103,9 +103,9 @@ public class Conductor : MonoBehaviour
             //x = type; y = color.
             if((otherNoteInfo[nextIndex].x == 0) && (otherNoteInfo[nextIndex].y == 1)) // if small and blue
                 _enemy = enemy1B;
-            else if((otherNoteInfo[nextIndex].x == 1) && (otherNoteInfo[nextIndex].y == 0)) // if large and red
+            else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 0)) // if large and red
                 _enemy = enemy2A;
-            else if((otherNoteInfo[nextIndex].x == 1) && (otherNoteInfo[nextIndex].y == 1)) // if large and blue
+            else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 1)) // if large and blue
                 _enemy = enemy2B;
 
 /*             if(notes[nextIndex].x == 0) {

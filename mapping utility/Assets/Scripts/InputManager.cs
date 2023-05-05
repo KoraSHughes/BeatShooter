@@ -7,7 +7,7 @@ using TMPro;
 public class InputManager : MonoBehaviour
 {
     public KeyCode[] left, up, down, right;
-    string direction; //l: 0, u: 1, d: 2, r: 3
+    int direction; //w: 0, a: 1, s: 2, d: 3
     enum NoteType{COLORA, COLORB, SMALL, SHIELD, LARGE}; //doing a bit 
     //public List<Vector2> notes; //y is beat, x is position
     List<string> mapLst;
@@ -55,10 +55,11 @@ public class InputManager : MonoBehaviour
             mapLst.Add("/*" + Conductor.songPos + " current pos*/\n");
         }
 
+        type = 0;
 
         //left press down check
         if (Input.GetKeyDown(left[0])) {
-            direction = "a";
+            direction = 1;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
@@ -66,7 +67,7 @@ public class InputManager : MonoBehaviour
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(left[1])) {
-            direction = "a";
+            direction = 1;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
@@ -75,11 +76,11 @@ public class InputManager : MonoBehaviour
         }
         //up press down check
         else if (Input.GetKeyDown(up[0])) {
-            direction = "w";
+            direction = 0;
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(up[1])) {
-            direction = "w";
+            direction = 0;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
@@ -88,7 +89,7 @@ public class InputManager : MonoBehaviour
         }
 
         else if (Input.GetKeyDown(down[0])) {
-            direction = "s";
+            direction = 2;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
@@ -96,7 +97,7 @@ public class InputManager : MonoBehaviour
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(down[1])) {
-            direction = "s";
+            direction = 2;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
@@ -105,7 +106,7 @@ public class InputManager : MonoBehaviour
         }
 
         else if (Input.GetKeyDown(right[0])) {
-            direction = "d";
+            direction = 3;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
@@ -113,7 +114,7 @@ public class InputManager : MonoBehaviour
             pressDownHelper(0);
         }
         else if (Input.GetKeyDown(right[1])) {
-            direction = "d";
+            direction = 3;
             if (Input.GetKey(KeyCode.Space)) 
                 type = 1;
             else if (Input.GetKey(KeyCode.LeftShift))
