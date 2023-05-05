@@ -1235,22 +1235,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2073970279}
     - target: {fileID: 5863592150279704633, guid: 8c4b50d613554134a8e46cf52d2fff0b, type: 3}
-      propertyPath: enemy1A
-      value: 
-      objectReference: {fileID: -1873247884319656365, guid: 79cee8a4c58ab31409f9a159bf0bc90b, type: 3}
-    - target: {fileID: 5863592150279704633, guid: 8c4b50d613554134a8e46cf52d2fff0b, type: 3}
-      propertyPath: enemy1B
-      value: 
-      objectReference: {fileID: 5051308568410749980, guid: f10c71ffb501a4bccb725d4bb32104d1, type: 3}
-    - target: {fileID: 5863592150279704633, guid: 8c4b50d613554134a8e46cf52d2fff0b, type: 3}
-      propertyPath: enemy2A
-      value: 
-      objectReference: {fileID: 6384417395554123189, guid: d3ac03019245c96439986a8207b5552e, type: 3}
-    - target: {fileID: 5863592150279704633, guid: 8c4b50d613554134a8e46cf52d2fff0b, type: 3}
-      propertyPath: enemy2B
-      value: 
-      objectReference: {fileID: 3332389089130248981, guid: fbd7fc600713342a5953e8081dcb5dd5, type: 3}
-    - target: {fileID: 5863592150279704633, guid: 8c4b50d613554134a8e46cf52d2fff0b, type: 3}
       propertyPath: recorder
       value: 
       objectReference: {fileID: 751102864}

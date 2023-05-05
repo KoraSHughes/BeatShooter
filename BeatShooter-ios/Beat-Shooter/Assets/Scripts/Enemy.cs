@@ -63,23 +63,23 @@ public class Enemy : MonoBehaviour
     private void updatePos() {
         if (track == 0) { //top
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 2f),
+                                            startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 1.5f),
                                             transform.position.z);
             //print(transform.position.x + " " + (startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.z);
         }
         else if (track == 1) { //left
-            transform.position = new Vector3(startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+            transform.position = new Vector3(startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 1.5f),
                                             transform.position.y,
                                             transform.position.z);
             //print((startPos + (endPos - startPos) * (1f - (beat - _conductor.songPosInBeats))) + " " + transform.position.y + " " + transform.position.z);
         }
         else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 2f),
+                                            startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * 1.5f),
                                             transform.position.z);
         }
         else if (track == 3) { //right
-            transform.position = new Vector3(startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 2f),
+            transform.position = new Vector3(startPos + (2) * (1f + (beat - _conductor.songPosInBeats) * 1.5f),
                                             transform.position.y,
                                             transform.position.z);
         }

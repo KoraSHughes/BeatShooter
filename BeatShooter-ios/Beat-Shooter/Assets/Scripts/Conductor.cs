@@ -94,18 +94,18 @@ public class Conductor : MonoBehaviour
         // SPAAAAAAAAAAAAAWN NOTES
         if(nextIndex < notes.Count && notes[nextIndex].y < songPosInBeats + beatsSpawned){
             //print(spawnpoint.position + " " + Quaternion.identity);
-            Enemy _enemy = enemy1A; //small and red
+            Enemy _enemy = enemy1A; //small and blue
             Transform pos = top.transform;
             float startPos = pos.position.y;
             float endPos = playerGO.transform.position.y;
             Vector2 force = new Vector2(0,0);
             
             //x = type; y = color.
-            if((otherNoteInfo[nextIndex].x == 0) && (otherNoteInfo[nextIndex].y == 1)) // if small and blue
+            if((otherNoteInfo[nextIndex].x == 0) && (otherNoteInfo[nextIndex].y == 1)) // if small and red
                 _enemy = enemy1B;
-            else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 0)) // if large and red
+            else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 0)) // if large and blue
                 _enemy = enemy2A;
-            else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 1)) // if large and blue
+            else if((otherNoteInfo[nextIndex].x == -2) && (otherNoteInfo[nextIndex].y == 1)) // if large and red
                 _enemy = enemy2B;
 
 /*             if(notes[nextIndex].x == 0) {
