@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     private Image heart3image;
     private Image cooldown;
     private Image _shield;
-    private Color blue = new Color(0, 107, 255, 255);
-    private Color red = new Color(255, 0, 64, 255);
+    private Color blue = new Color(0, 0.3176471f, 0.7490196f);
+    private Color red = new Color(0.7490196f, 0, 0.1882353f);
 
     public GameState state;
     
