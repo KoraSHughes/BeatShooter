@@ -2621,15 +2621,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'DOUBLE TAP TO ACTIVE A SHIELD
+  m_text: 'SWIPE TO ACTIVATE A SHIELD
 
-    SHIELD COOLDOWN IS INDICATED ON THE
-    TOP LEFT CORNER
+    SHIELD COOLDOWN IS INDICATED ON THE TOP
+    LEFT CORNER
 
-    YOU GET 3 LIVES TO COMPLETE EACH SONG
+    YOU HAVE 3 LIVES TO COMPLETE EACH SONG
 
-    HOW HIGH WILL
-    YOU SCORE?'
+    HOW HIGH WILL YOU
+    SCORE?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 801f0325e9986db499057e6c222fad91, type: 2}
   m_sharedMaterial: {fileID: -7704936014767844838, guid: 801f0325e9986db499057e6c222fad91, type: 2}
@@ -4719,7 +4719,6 @@ MonoBehaviour:
   bulletPrefab1: {fileID: 1114680609795115919, guid: e5a4924c5f5c247e6b9ee878c85052a2, type: 3}
   bulletPrefab2: {fileID: 1114680609795115919, guid: 5aa9574d181784213991942c66ba30bf, type: 3}
   _shield: {fileID: 8020075325180781600}
-  ShieldInc: 5
 --- !u!224 &9064554139597898556
 RectTransform:
   m_ObjectHideFlags: 0

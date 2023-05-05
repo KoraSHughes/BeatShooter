@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         background.SetActive(true);
         startButton.SetActive(true);
         pauseButton.SetActive(false);
-        settingsButton.SetActive(true);
+        settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
         gameOverMenu.SetActive(false);
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
             heart1.SetActive(false);
         }
 
+
 #if !UNITY_WEBGL  // for webGL need platform conditional because it will just freeze otherwise
         if (Input.GetKeyDown(KeyCode.Escape)){
             Application.Quit();
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
         background.SetActive(true);
         startButton.SetActive(false);
         pauseButton.SetActive(false);
-        settingsButton.SetActive(true);
+        settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
         gameOverMenu.SetActive(false);
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
         background.SetActive(true);
         startButton.SetActive(true);
         pauseButton.SetActive(false);
-        settingsButton.SetActive(true);
+        settingsButton.SetActive(false);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
         gameOverMenu.SetActive(false);
