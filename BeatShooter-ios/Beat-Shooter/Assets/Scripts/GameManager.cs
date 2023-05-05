@@ -206,6 +206,9 @@ public class GameManager : MonoBehaviour
 
     public void YouWin(){
         //titleUI.text = "LEVEL COMPLETE";
+        gameOverMenu.GetComponent<Canvas>().enabled = true;
+        
+        PauseHandler();
         gameOverScoreText.text = "Score:" + score;
     }
 

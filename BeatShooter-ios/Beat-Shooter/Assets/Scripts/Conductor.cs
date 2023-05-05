@@ -59,6 +59,8 @@ public class Conductor : MonoBehaviour
     //public HoldGhost holdGhost;
     //Animation anim;
 
+    GameManager _gameManager;
+
     void Awake() {
         instance = this;
         GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
@@ -84,7 +86,8 @@ public class Conductor : MonoBehaviour
         //spawnedEnemiesInd = 0;
         score = 0;
         combo = 0;
-        GameObject.Find("Game Over Menu UI").GetComponent<Canvas>().enabled = false;
+        //GameObject.Find("Game Over Menu UI").GetComponent<Canvas>().enabled = false;
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
     
     void Update() {
@@ -146,7 +149,8 @@ public class Conductor : MonoBehaviour
                     print(score);
                     score = score + (int)((float)score * ((float)rStats.highestCombo / (float)spawnedEnemies.Count));
                     print(score); */
-                    GameObject.Find("Game Over Menu UI").GetComponent<Canvas>().enabled = true;
+                    //GameObject.Find("Game Over Menu UI").GetComponent<Canvas>().enabled = true;
+                    _gameManager.GetComponent<GameManager>().YouWin();
                     done = true;
                 }
             }
