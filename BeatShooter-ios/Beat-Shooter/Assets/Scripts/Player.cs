@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
 
     public bool detectSwipe() {
         //if (Input.touches.Length > 0) {
-        float minSwipeLength = 20f;
+        float minSwipeLength = 50f;
         currentSwipe = new Vector2(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
     
         // Make sure it was a legit swipe, not a tap
