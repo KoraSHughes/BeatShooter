@@ -84,7 +84,7 @@ public class Conductor : MonoBehaviour
         spawnedEnemiesInd = 0;
         score = 0;
         combo = 0;
-        //GameObject.Find("EndScene").GetComponent<Canvas>().enabled = false;
+        GameObject.Find("You Win Menu UI").GetComponent<Canvas>().enabled = false;
     }
     
     void Update() {
@@ -141,12 +141,12 @@ public class Conductor : MonoBehaviour
             }
             else {
                 if (!done) {
-                    print(rStats.highestCombo);
+                    /* print(rStats.highestCombo);
                     print((float)score * ((float)rStats.highestCombo / (float)spawnedEnemies.Count));
                     print(score);
                     score = score + (int)((float)score * ((float)rStats.highestCombo / (float)spawnedEnemies.Count));
-                    print(score);
-                    GameObject.Find("EndScene").GetComponent<Canvas>().enabled = true;
+                    print(score); */
+                    GameObject.Find("You Win Menu UI").GetComponent<Canvas>().enabled = true;
                     done = true;
                 }
             }
@@ -196,15 +196,15 @@ public class Conductor : MonoBehaviour
         }
     }
 
-    public void HitKey(char track){
+/*     public void HitKey(char track){
         currentTrack = track;
         //basic animation test
-        /* int canim = Random.Range(0,2);
+        int canim = Random.Range(0,2);
         while(lastanim == canim){
             canim = Random.Range(0,2);
         }
         lastanim = canim;
-        playerAnims.PlayAnim(lastanim); */
+        playerAnims.PlayAnim(lastanim);
 
         for(int i=0; i<6; i++){
             if((spawnedEnemiesInd+i) >= (spawnedEnemies.Count)) continue;
@@ -254,24 +254,24 @@ public class Conductor : MonoBehaviour
                     //spawnedEnemies[spawnedEnemiesInd + i].Hit();
                     hitAccuracy = spawnedEnemies[spawnedEnemiesInd + i].beat - songPosInBeats;
 
-                    /* if(spawnedEnemies[spawnedEnemiesInd + i].noteType == NoteTypes.hold){
-                        heldTracks[track] = true;
-                        if(holdGhost != null){
-                            float py = track == 0 ? laneY1 : laneY2;
-                            HoldGhost tgh = Instantiate(holdGhost, new Vector3(playerGO.transform.position.x, py, 0), Quaternion.identity);
-                            tgh.track = track;
-                            tgh.endBeat = spawnedEnemies[spawnedEnemiesInd + i].endBeat;
-                        }
-                        heldNotes[track] = spawnedEnemies[spawnedEnemiesInd + i];
-                        heldNotes[track].isHeld = true;
-                        heldNotes[track].rootVisual.SetActive(false);
-                    } */
+                    // if(spawnedEnemies[spawnedEnemiesInd + i].noteType == NoteTypes.hold){
+                    //     heldTracks[track] = true;
+                    //     if(holdGhost != null){
+                    //         float py = track == 0 ? laneY1 : laneY2;
+                    //         HoldGhost tgh = Instantiate(holdGhost, new Vector3(playerGO.transform.position.x, py, 0), Quaternion.identity);
+                    //         tgh.track = track;
+                    //         tgh.endBeat = spawnedEnemies[spawnedEnemiesInd + i].endBeat;
+                    //     }
+                    //     heldNotes[track] = spawnedEnemies[spawnedEnemiesInd + i];
+                    //     heldNotes[track].isHeld = true;
+                    //     heldNotes[track].rootVisual.SetActive(false);
+                    // }
 
                     break;
                 }
             }
         }
-    }
+    } */
 
     private void OnGameStateChanged(GameState newGameState)
     {
@@ -285,8 +285,4 @@ public class Conductor : MonoBehaviour
                 AudioListener.pause = true;
             }
     }
-
-/*     public void pauseAudio() {
-        _audioSource.Pause();
-    } */
 }
