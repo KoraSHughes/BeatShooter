@@ -80,7 +80,7 @@ public class Enemy : MonoBehaviour
         }
         else if (track == 2) { //bottom
             transform.position = new Vector3(transform.position.x,
-                                            startPos + (2) * (1f - (beat - _conductor.songPosInBeats) * speed),
+                                            startPos - (2) * (1f + (beat - _conductor.songPosInBeats) * speed),
                                             transform.position.z);
         }
         else if (track == 3) { //right
