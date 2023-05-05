@@ -196,8 +196,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver(){
-        titleUI.text = "GAME OVER";
-        //gameOverMenu.SetActive(true);
+        //titleUI.text = "GAME OVER";
+        gameOverMenu.GetComponent<Canvas>().enabled = true;
         PauseHandler();
         
         gameOverScoreText.text = "score:" + score;
@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void YouWin(){
-        titleUI.text = "LEVEL COMPLETE";
+        //titleUI.text = "LEVEL COMPLETE";
         gameOverScoreText.text = "Score:" + score;
     }
 
