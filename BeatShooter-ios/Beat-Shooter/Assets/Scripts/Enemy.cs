@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         //healthBar.value = health;
         if (health <= 1){
             // _shield.SetActive(false);
-            _shield.GetComponent<Shield>().invis(true);
+            _shield.GetComponent<Shield>().ActiveSetter(false);
         }
         updatePos();
     }
@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
             else{
                 Instantiate(smallexplo, transform.position, Quaternion.identity);
                 if (health == 1){
-                    _shield.GetComponent<Shield>().invis(true);
+                    _shield.GetComponent<Shield>().ActiveSetter(false);
                 }
             }
             Destroy(other.gameObject);

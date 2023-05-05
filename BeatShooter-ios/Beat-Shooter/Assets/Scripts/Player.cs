@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
 
     public GameObject _shield;
     float timeToShield = 0.0f;
-    public float ShieldDuration = 5.0f;
-    public float ShieldInc = 15.0f;
+    //public float ShieldDuration = 1f;
+    public float ShieldInc = 5f;
     private Slider shieldCooldown;
 
     Vector2 firstPressPos = new Vector2(-100,-100), currentSwipe = new Vector2(-100,-100), secondPressPos;
@@ -60,13 +60,14 @@ public class Player : MonoBehaviour
         //     _shield.SetActive(true);
         // }
         //print(health);
-        shieldCooldown.value = 20 - timeToShield;
+        shieldCooldown.value = 5 - timeToShield;
         //print(timeToShield);
 
         shieldAppear();
+
         // do a block/Shield
 /*         if (timeToShield <= 0){
-            detectSwipe();
+            
             timeToShield += ShieldInc + ShieldDuration;
         } */
         for (int i=0; i < Input.touchCount; ++i){
@@ -77,7 +78,10 @@ public class Player : MonoBehaviour
             }
             if (touch.phase == TouchPhase.Ended) {
                 firstPressPos = touch.position;
-                if (!detectSwipe())
+                bool val = true;
+                if (timeToShield <= 0)
+                    val = detectSwipe();
+                if (!val)
                     singleTouch(touch);
             }
         }
@@ -94,20 +98,19 @@ public class Player : MonoBehaviour
         if (timeToShield > 0){
             timeToShield -= Time.deltaTime;
             if (timeToShield >= ShieldInc) {
-                _shield.GetComponent<Shield>().invis(false);
+                _shield.GetComponent<Shield>().ActiveSetter(false);
             }
             else{
-                _shield.GetComponent<Shield>().invis(true);
+                _shield.GetComponent<Shield>().ActiveSetter(true);
             }
         }
         else{
             timeToShield = 0;
-            _shield.GetComponent<Shield>().invis(true);
+            _shield.GetComponent<Shield>().ActiveSetter(false);
         }
     }
 
     public void singleTouch(Touch touch) {
-        print("single touch");
         Vector2 pos = cam.ScreenToWorldPoint(touch.position); 
         int touch_region = get_region(pos);
 
@@ -132,6 +135,7 @@ public class Player : MonoBehaviour
                 myAngle = defaultAng;
                 break;
         }
+        print("single touch; angle: " + myAngle);
         // shoot
         if (myAngle != defaultAng){
             if (timeToShoot == 0){
@@ -184,7 +188,7 @@ public class Player : MonoBehaviour
 
     public bool detectSwipe() {
         //if (Input.touches.Length > 0) {
-        float minSwipeLength = 200f;
+        float minSwipeLength = 20f;
         currentSwipe = new Vector2(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
     
         // Make sure it was a legit swipe, not a tap
@@ -197,16 +201,16 @@ public class Player : MonoBehaviour
 
         // Swipe up
         if (currentSwipe.y > 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f) 
-            _shield.GetComponent<Shield>().invis(false);
+            _shield.GetComponent<Shield>().ActiveSetter(true);
         // Swipe down
         else if (currentSwipe.y < 0 && currentSwipe.x > -0.5f && currentSwipe.x < 0.5f)
-            _shield.GetComponent<Shield>().invis(false);
+            _shield.GetComponent<Shield>().ActiveSetter(true);
         // Swipe left
         else if (currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-            _shield.GetComponent<Shield>().invis(false);
+            _shield.GetComponent<Shield>().ActiveSetter(true);
         // Swipe right
         else if (currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f)
-            _shield.GetComponent<Shield>().invis(false);
+            _shield.GetComponent<Shield>().ActiveSetter(true);
         //}
         return true;
     }
