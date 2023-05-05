@@ -210,6 +210,7 @@ public class GameManager : MonoBehaviour
         
         PauseHandler();
         gameOverScoreText.text = "Score:" + score;
+        Time.timeScale = 0f;
     }
 
     public void SettingsMenu() {
